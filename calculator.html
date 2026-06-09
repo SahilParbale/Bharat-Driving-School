@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Calculator | Bharat Motor Driving School</title>
+    <meta name="description" content="Calculate your driving lesson package fee instantly with our interactive cost estimator. Choose vehicle types, training days, and licensing support.">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Topbar Info -->
+    <div class="topbar">
+        <div class="container topbar-wrapper">
+            <div class="topbar-left">
+                <span class="topbar-item"><i class="fa-solid fa-location-dot"></i> Katraj • Dhankwadi • Dhayari, Pune</span>
+                <span class="topbar-item"><i class="fa-solid fa-phone"></i> <a href="tel:+919011051238">9011051238</a></span>
+            </div>
+            <div class="topbar-right">
+                <a href="https://wa.me/919922211238" target="_blank" class="topbar-social"><i class="fab fa-whatsapp"></i></a>
+                <span class="topbar-badge"><i class="fa-solid fa-clock"></i> Mon - Sun: 7 AM - 9 PM</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container header-wrapper">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="BMDS Logo" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">BHARAT</span>
+                    <span class="logo-subtitle">Driving School</span>
+                </div>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="calculator.html" class="nav-link active">Fee Calculator</a>
+                <a href="branches.html" class="nav-link">Branches</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="#" class="nav-link nav-btn" id="enrollTrigger">Enroll Now</a>
+            </nav>
+        </div>
+    </header>
+    
+    
+    <main id="page-content">
+    <!-- Subpage Hero Banner -->
+    <section class="subpage-hero">
+        <div class="glow-blob blob-1"></div>
+        <div class="glow-blob blob-2"></div>
+        <div class="container">
+            <div class="subpage-hero-content">
+                <span class="section-tag">Interactive Pricing</span>
+                <h1 class="subpage-title">Driving Course Fee Calculator</h1>
+                <p class="subpage-desc">Customize your training duration, select vehicle types, add licensing assistance, and estimate your total cost.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Calculator Section -->
+    <section class="calculator-section section" id="calculator">
+        <div class="container grid grid-2">
+            <div class="calc-content">
+                <span class="section-tag">Pricing Estimator</span>
+                <h2 class="section-title">Configure Your Package & Inclusions</h2>
+                <p>Customize your lessons based on your prior experience. Select from a variety of vehicle options (compact hatchback, premium sedan, SUV, or geared bike) and toggling optional RTO application support.</p>
+                <div class="calc-points">
+                    <div class="calc-point"><i class="fa-solid fa-check"></i> Standardized rates (no hidden commissions)</div>
+                    <div class="calc-point"><i class="fa-solid fa-check"></i> Doorstep pick-up & drop toggle option</div>
+                    <div class="calc-point"><i class="fa-solid fa-check"></i> RTO learning/permanent exam in-vehicle assistance</div>
+                </div>
+            </div>
+            <div class="calc-card-wrapper" id="calculator-root">
+                <!-- Mounted dynamically by feeCalculator.ts -->
+            </div>
+        </div>
+    </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/images/logo.png" alt="BMDS" class="footer-logo">
+                <h3>Bharat Motor Driving School</h3>
+                <p>Empowering drivers with premium coaching, defensive training, and comprehensive licensing services since 2013.</p>
+                <div class="footer-socials">
+                    <a href="https://wa.me/919922211238" class="footer-social"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses Offered</a></li>
+                    <li><a href="calculator.html">Fee Calculator</a></li>
+                    <li><a href="branches.html">Our Branches</a></li>
+                    <li><a href="gallery.html">Media Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Primary Services</h4>
+                <ul>
+                    <li><a href="courses.html">Car Training</a></li>
+                    <li><a href="courses.html">SUV Training</a></li>
+                    <li><a href="courses.html">Two-Wheeler Classes</a></li>
+                    <li><a href="index.html#services">RTO Guidance</a></li>
+                    <li><a href="index.html#services">License Renewal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-wrapper">
+                <p>&copy; 2026 Bharat Motor Driving School. All Rights Reserved.</p>
+                <p>Designed with Professional Code standards.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Enrollment Modal -->
+    <div class="modal-overlay" id="bookingModalOverlay">
+        <div class="booking-modal" id="bookingModal">
+            <button class="modal-close" id="modalCloseBtn">&times;</button>
+            <div class="modal-header">
+                <h2>Driving School Enrollment</h2>
+                <div class="modal-steps">
+                    <div class="modal-step active" data-step="1">1</div>
+                    <div class="modal-step" data-step="2">2</div>
+                    <div class="modal-step" data-step="3">3</div>
+                    <div class="modal-step" data-step="4">4</div>
+                </div>
+                <div class="modal-step-labels">
+                    <span class="active">Course</span><span>Schedule</span><span>Details</span><span>Summary</span>
+                </div>
+            </div>
+            
+            <form id="bookingCheckoutForm">
+                <div class="modal-step-content active" data-step-content="1">
+                    <h3>Select Package & Branch</h3>
+                    <div class="form-group">
+                        <label for="bookCourseSelect">Select Driving Package</label>
+                        <select id="bookCourseSelect" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookBranchSelect">Select Training Branch</label>
+                        <select id="bookBranchSelect" required>
+                            <option value="dhankwadi">Shri Bharat MDS (Dhankwadi)</option>
+                            <option value="dhayari">New Bharat MDS (Dhayari)</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" style="opacity: 0; pointer-events: none;">Back</button>
+                        <button type="button" class="btn btn-primary next-step-btn">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="modal-step-content" data-step-content="2">
+                    <h3>Preferred Scheduling</h3>
+                    <div class="form-group">
+                        <label for="bookStartDate">Preferred Start Date</label>
+                        <input type="date" id="bookStartDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Daily Time Slot</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="timeSlot" value="morning" checked>
+                                <div class="radio-card-content">
+                                    <i class="fa-solid fa-cloud-sun"></i><span>Morning (7 AM - 11 AM)</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="timeSlot" value="afternoon">
+                                <div class="radio-card-content">
+                                    <i class="fa-solid fa-sun"></i><span>Afternoon (12 PM - 4 PM)</span>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="timeSlot" value="evening">
+                                <div class="radio-card-content">
+                                    <i class="fa-solid fa-moon"></i><span>Evening (5 PM - 9 PM)</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary prev-step-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn btn-primary next-step-btn">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="modal-step-content" data-step-content="3">
+                    <h3>Contact & Pickup Location</h3>
+                    <div class="form-group">
+                        <label for="bookName">Full Name</label>
+                        <input type="text" id="bookName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookPhone">Phone Number</label>
+                            <input type="tel" id="bookPhone" placeholder="10-digit mobile number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookEmail">Email Address</label>
+                            <input type="email" id="bookEmail" placeholder="name@domain.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookAddress">Pick-up Address (Optional)</label>
+                        <textarea id="bookAddress" rows="2" placeholder="Include address details for doorstep pickup services"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary prev-step-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn btn-primary next-step-btn">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="modal-step-content" data-step-content="4">
+                    <h3>Enrollment Summary</h3>
+                    <div class="invoice-summary">
+                        <div class="invoice-row">
+                            <span class="invoice-label" id="summaryCourseName">Selected Course</span>
+                            <span class="invoice-value" id="summaryCoursePrice">₹0.00</span>
+                        </div>
+                        <div class="invoice-row">
+                            <span class="invoice-label">Branch</span>
+                            <span class="invoice-value" id="summaryBranch">Dhankwadi</span>
+                        </div>
+                        <div class="invoice-row">
+                            <span class="invoice-label">Schedule Start</span>
+                            <span class="invoice-value" id="summarySchedule">--</span>
+                        </div>
+                        <div class="invoice-row">
+                            <span class="invoice-label">Doorstep Pick-up</span>
+                            <span class="invoice-value" id="summaryPickup">--</span>
+                        </div>
+                        <hr class="invoice-divider">
+                        <div class="invoice-row total">
+                            <span class="invoice-label">Total Fee</span>
+                            <span class="invoice-value" id="summaryTotal">₹0.00</span>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary prev-step-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                        <button type="submit" class="btn btn-primary">Complete Reservation <i class="fa-solid fa-check"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- JS Entrypoint -->
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

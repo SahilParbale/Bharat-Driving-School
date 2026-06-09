@@ -1,0 +1,193 @@
+export interface Course {
+    id: string;
+    title: string;
+    category: 'car' | 'bike' | 'combo';
+    price: number;
+    duration: string;
+    sessions: string;
+    features: string[];
+    image: string;
+    badge?: string;
+}
+
+export const COURSES_DATA: Course[] = [
+    {
+        id: 'car-basic',
+        title: 'Beginner Car Training (Hatchback)',
+        category: 'car',
+        price: 3500,
+        duration: '15 Days',
+        sessions: '15 Live Sessions',
+        features: [
+            'Basic controls & steering alignment',
+            'Doorstep pick-up & drop service',
+            'Defensive driving techniques',
+            'RTO Learning license application support',
+            'Single trainer assignment'
+        ],
+        image: 'assets/services/5.png',
+        badge: 'Most Popular'
+    },
+    {
+        id: 'car-sedan',
+        title: 'Premium Sedan Course',
+        category: 'car',
+        price: 5000,
+        duration: '21 Days',
+        sessions: '21 Live Sessions',
+        features: [
+            'Traffic driving & Highway training',
+            'Doorstep pick-up & drop service',
+            'Advanced parallel & reverse parking',
+            'Night driving session (1 Hour)',
+            'Full RTO license assistance & test car'
+        ],
+        image: 'assets/services/10.png',
+        badge: 'Best Value'
+    },
+    {
+        id: 'car-suv',
+        title: 'SUV Mastery Training',
+        category: 'car',
+        price: 6500,
+        duration: '15 Days',
+        sessions: '15 Live Sessions',
+        features: [
+            'Heavy vehicle dimensions estimation',
+            'Doorstep pick-up & drop service',
+            'Uphill controls & slope techniques',
+            'Complex parking solutions',
+            'Official RTO passing guidance'
+        ],
+        image: 'assets/services/9.png',
+        badge: 'Premium'
+    },
+    {
+        id: 'two-wheeler',
+        title: 'Two-Wheeler Driving (Bike/Scooter)',
+        category: 'bike',
+        price: 1800,
+        duration: '10 Days',
+        sessions: '10 Live Sessions',
+        features: [
+            'Geared & Non-Geared options',
+            'Balance training & figure-8 testing',
+            'Traffic rules & emergency braking',
+            'RTO learning license prep',
+            'Personal training track'
+        ],
+        image: 'assets/services/8.png'
+    },
+    {
+        id: 'combo-master',
+        title: 'Combo Driving Mastery (Car + Bike)',
+        category: 'combo',
+        price: 5500,
+        duration: '25 Days',
+        sessions: '25 Live Sessions',
+        features: [
+            'Comprehensive manual car + bike training',
+            'Doorstep pick-up & drop (for car)',
+            'Complete theoretical road signs library',
+            'Double license processing support',
+            'Full mock test practices'
+        ],
+        image: 'assets/services/6.png',
+        badge: 'Super Saver'
+    }
+];
+
+export function initCoursesSection(onBookClick: (courseId: string) => void): void {
+    const root = document.getElementById('courses-root');
+    if (!root) return;
+
+    // Render filter tabs & card container skeletons
+    root.innerHTML = `
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All Packages</button>
+            <button class="filter-tab" data-filter="car">Four-Wheelers (Car)</button>
+            <button class="filter-tab" data-filter="bike">Two-Wheelers (Bike)</button>
+            <button class="filter-tab" data-filter="combo">Combo Offers</button>
+        </div>
+        <div class="courses-grid" id="courses-grid-container"></div>
+    `;
+
+    const gridContainer = document.getElementById('courses-grid-container');
+    if (!gridContainer) return;
+
+    // Function to render cards based on filter
+    const renderCards = (filter: string) => {
+        gridContainer.innerHTML = '';
+        const filtered = filter === 'all' 
+            ? COURSES_DATA 
+            : COURSES_DATA.filter(c => c.category === filter);
+
+        filtered.forEach(course => {
+            const card = document.createElement('div');
+            card.className = 'course-card reveal';
+            
+            // Build features HTML list
+            const featuresHtml = course.features
+                .map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`)
+                .join('');
+
+            card.innerHTML = `
+                <div class="course-img-wrapper">
+                    <img src="${course.image}" alt="${course.title}" class="course-img">
+                    ${course.badge ? `<span class="course-badge">${course.badge}</span>` : ''}
+                </div>
+                <div class="course-content">
+                    <h3 class="course-title">${course.title}</h3>
+                    <div class="course-details">
+                        <span><i class="fa-solid fa-clock"></i> ${course.duration}</span>
+                        <span><i class="fa-solid fa-road"></i> ${course.sessions}</span>
+                    </div>
+                    <ul class="course-features">
+                        ${featuresHtml}
+                    </ul>
+                    <div class="course-footer">
+                        <div class="course-price">
+                            <span class="price-label">Price Package</span>
+                            <span class="price-amount">₹${course.price.toLocaleString('en-IN')}</span>
+                        </div>
+                        <button class="btn btn-primary book-btn" data-id="${course.id}">Book Training</button>
+                    </div>
+                </div>
+            `;
+            gridContainer.appendChild(card);
+        });
+
+        // Trigger animations
+        setTimeout(() => {
+            const cards = gridContainer.querySelectorAll('.course-card');
+            cards.forEach(c => c.classList.add('active'));
+        }, 50);
+
+        // Bind Booking clicks
+        const bookButtons = gridContainer.querySelectorAll('.book-btn');
+        bookButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const target = e.currentTarget as HTMLButtonElement;
+                const id = target.getAttribute('data-id');
+                if (id) onBookClick(id);
+            });
+        });
+    };
+
+    // Initialize with all
+    renderCards('all');
+
+    // Filter switching events
+    const tabs = root.querySelectorAll('.filter-tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            const target = e.currentTarget as HTMLButtonElement;
+            const filter = target.getAttribute('data-filter') || 'all';
+
+            tabs.forEach(t => t.classList.remove('active'));
+            target.classList.add('active');
+
+            renderCards(filter);
+        });
+    });
+}

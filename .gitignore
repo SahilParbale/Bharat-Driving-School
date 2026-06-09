@@ -1,0 +1,9 @@
+node_modules/
+dist/
+bharatmds_full/
+.DS_Store
+.env
+.env.*
+.vscode/
+.idea/
+*.log
