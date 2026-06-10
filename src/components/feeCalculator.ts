@@ -7,19 +7,25 @@ export function initFeeCalculator(onBookCustomClick: (customDetails: {
     const root = document.getElementById('calculator-root');
     if (!root) return;
 
-    // Render calculator template
+    // Render calculator template with custom dropdown structure
     root.innerHTML = `
         <div class="calc-card">
             <h3>Configure Your Course</h3>
             
             <div class="calc-group">
-                <label for="calcVehicle">Select Vehicle Option</label>
-                <select id="calcVehicle" class="calc-select">
-                    <option value="hatchback" data-price="3500">Hatchback (Manual) - ₹3,500 base</option>
-                    <option value="sedan" data-price="4500">Sedan (Manual/Automatic) - ₹4,500 base</option>
-                    <option value="suv" data-price="5500">SUV Premium (Manual/Automatic) - ₹5,500 base</option>
-                    <option value="twowheeler" data-price="1800">Two-Wheeler (Scooter/Bike) - ₹1,800 base</option>
-                </select>
+                <label>Select Vehicle Option</label>
+                <div class="custom-dropdown" id="calcVehicleDropdown">
+                    <button type="button" class="dropdown-trigger" id="dropdownTrigger">
+                        <span id="selectedVehicleText">Hatchback (Manual) - ₹3,500 base</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <div class="dropdown-item active" data-value="hatchback" data-price="3500">Hatchback (Manual) - ₹3,500 base</div>
+                        <div class="dropdown-item" data-value="sedan" data-price="4500">Sedan (Manual/Automatic) - ₹4,500 base</div>
+                        <div class="dropdown-item" data-value="suv" data-price="5500">SUV Premium (Manual/Automatic) - ₹5,500 base</div>
+                        <div class="dropdown-item" data-value="twowheeler" data-price="1800">Two-Wheeler (Scooter/Bike) - ₹1,800 base</div>
+                    </div>
+                </div>
             </div>
             
             <div class="calc-group">
@@ -32,7 +38,7 @@ export function initFeeCalculator(onBookCustomClick: (customDetails: {
             
             <div class="calc-group">
                 <label>Optional Service Add-ons</label>
-                <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                <div style="display:flex; flex-direction:column; gap:0.5rem;">
                     <label class="checkbox-card">
                         <input type="checkbox" id="addLicense" value="license" data-price="1500" checked>
                         <span>Official RTO License Assistance (+₹1,500)</span>
@@ -58,7 +64,11 @@ export function initFeeCalculator(onBookCustomClick: (customDetails: {
         </div>
     `;
 
-    const vehicleSelect = document.getElementById('calcVehicle') as HTMLSelectElement;
+    const vehicleDropdown = document.getElementById('calcVehicleDropdown') as HTMLElement;
+    const dropdownTrigger = document.getElementById('dropdownTrigger') as HTMLButtonElement;
+    const dropdownMenu = document.getElementById('dropdownMenu') as HTMLElement;
+    const selectedText = document.getElementById('selectedVehicleText') as HTMLElement;
+    const dropdownItems = dropdownMenu.querySelectorAll('.dropdown-item');
     const daysSlider = document.getElementById('calcDays') as HTMLInputElement;
     const daysLabel = document.getElementById('daysVal');
     const licenseCheckbox = document.getElementById('addLicense') as HTMLInputElement;
@@ -68,15 +78,26 @@ export function initFeeCalculator(onBookCustomClick: (customDetails: {
     const bookBtn = document.getElementById('calcBookBtn');
 
     let currentPrice = 0;
+    let selectedPrice = 3500;
+
+
+    // Toggle dropdown menu open/closed state
+    dropdownTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        vehicleDropdown.classList.toggle('open');
+    });
+
+    // Close dropdown menu when clicking anywhere else on the document
+    document.addEventListener('click', () => {
+        vehicleDropdown.classList.remove('open');
+    });
 
     const calculatePrice = () => {
-        const vehicleOption = vehicleSelect.options[vehicleSelect.selectedIndex];
-        const basePrice = parseInt(vehicleOption.getAttribute('data-price') || '0');
         const days = parseInt(daysSlider.value);
         
         // Duration scaling (base is calibrated at 15 sessions)
         const durationMultiplier = days / 15;
-        let runningTotal = basePrice * durationMultiplier;
+        let runningTotal = selectedPrice * durationMultiplier;
 
         // Add-ons
         if (licenseCheckbox.checked) runningTotal += parseInt(licenseCheckbox.getAttribute('data-price') || '0');
@@ -85,7 +106,6 @@ export function initFeeCalculator(onBookCustomClick: (customDetails: {
 
         currentPrice = Math.round(runningTotal);
         
-        // Counter animation or display
         if (priceDisplay) {
             priceDisplay.textContent = `₹${currentPrice.toLocaleString('en-IN')}`;
         }
@@ -94,8 +114,25 @@ export function initFeeCalculator(onBookCustomClick: (customDetails: {
         }
     };
 
-    // Bind event listeners
-    vehicleSelect.addEventListener('change', calculatePrice);
+    // Bind item click select action
+    dropdownItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const target = item as HTMLElement;
+            
+            // Highlight active item and update selection text
+            selectedText.textContent = target.textContent || '';
+            dropdownItems.forEach(di => di.classList.remove('active'));
+            target.classList.add('active');
+
+            selectedPrice = parseInt(target.getAttribute('data-price') || '3500', 10);
+            
+            vehicleDropdown.classList.remove('open');
+            calculatePrice();
+        });
+    });
+
+    // Bind range slider and checkbox listeners
     daysSlider.addEventListener('input', calculatePrice);
     licenseCheckbox.addEventListener('change', calculatePrice);
     pickupCheckbox.addEventListener('change', calculatePrice);
@@ -107,7 +144,7 @@ export function initFeeCalculator(onBookCustomClick: (customDetails: {
     // Booking click
     if (bookBtn) {
         bookBtn.addEventListener('click', () => {
-            const selectedVehicle = vehicleSelect.options[vehicleSelect.selectedIndex].text.split(' - ')[0];
+            const selectedVehicle = selectedText.textContent?.split(' - ')[0] || 'Hatchback (Manual)';
             const days = parseInt(daysSlider.value);
             
             const activeAddons: string[] = [];

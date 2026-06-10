@@ -3,7 +3,8 @@ import {
     initMobileNav, 
     initHeaderScroll, 
     initGalleryTabs,
-    initFaqAccordion
+    initFaqAccordion,
+    initStatsCounter
 } from './utils/animations';
 import { initCoursesSection } from './components/courses';
 import { initFeeCalculator } from './components/feeCalculator';
@@ -54,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // Home Page (or root "/")
             initFaqAccordion();
+            initStatsCounter();
             
             // Quick Contact Counselor Form Submission
             const contactForm = document.getElementById('directContactForm') as HTMLFormElement;

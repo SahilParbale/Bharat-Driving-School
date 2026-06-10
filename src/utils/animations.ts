@@ -132,3 +132,75 @@ export function initFaqAccordion(): void {
         }
     });
 }
+
+export function initStatsCounter(): void {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    if (statNumbers.length === 0) return;
+
+    const observerOptions = {
+        root: null,
+        threshold: 0.1, // Trigger when 10% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const targetEl = entry.target as HTMLElement;
+            const suffix = targetEl.getAttribute('data-suffix') || '';
+            
+            if (entry.isIntersecting) {
+                // Trigger the count-up animation when scrolling into view (from any direction)
+                animateSingleNumber(targetEl);
+            } else {
+                // Reset to 0 when it goes out of view, and cancel any active animation frame
+                const animId = targetEl.dataset.animationId;
+                if (animId) {
+                    cancelAnimationFrame(parseInt(animId, 10));
+                    delete targetEl.dataset.animationId;
+                }
+                targetEl.textContent = '0' + suffix;
+            }
+        });
+    }, observerOptions);
+
+    statNumbers.forEach(el => {
+        // Set initial state immediately to 0 + suffix
+        const suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = '0' + suffix;
+        
+        // Start observing this specific counter element
+        observer.observe(el);
+    });
+
+    function animateSingleNumber(htmlEl: HTMLElement) {
+        const target = parseInt(htmlEl.getAttribute('data-target') || '0', 10);
+        const suffix = htmlEl.getAttribute('data-suffix') || '';
+        const duration = 2000; // 2 seconds for a smooth, visible roll
+        const startTime = performance.now();
+
+        // Cancel any active animation frame on this element to avoid duplicate loops
+        const activeAnimId = htmlEl.dataset.animationId;
+        if (activeAnimId) {
+            cancelAnimationFrame(parseInt(activeAnimId, 10));
+        }
+
+        const updateNumber = (currentTime: number) => {
+            const elapsedTime = currentTime - startTime;
+            if (elapsedTime >= duration) {
+                htmlEl.textContent = target.toLocaleString() + suffix;
+                delete htmlEl.dataset.animationId;
+            } else {
+                const progress = elapsedTime / duration;
+                // Quadratic ease-out: progress * (2 - progress)
+                const easeProgress = progress * (2 - progress);
+                const currentValue = Math.floor(easeProgress * target);
+                htmlEl.textContent = currentValue.toLocaleString() + suffix;
+                
+                const nextAnimId = requestAnimationFrame(updateNumber);
+                htmlEl.dataset.animationId = nextAnimId.toString();
+            }
+        };
+
+        const firstAnimId = requestAnimationFrame(updateNumber);
+        htmlEl.dataset.animationId = firstAnimId.toString();
+    }
+}

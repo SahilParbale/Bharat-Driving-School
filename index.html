@@ -62,8 +62,12 @@
     <!-- Hero Slider -->
     <section class="hero" id="home">
         <div class="hero-slider">
-            <div class="slide active" style="background-image: linear-gradient(rgba(11, 15, 25, 0.75), rgba(11, 15, 25, 0.85)), url('assets/slider/1_1.png');">
-                <div class="container">
+            <div class="slide active" style="position: relative; overflow: hidden;">
+                <video autoplay muted loop playsinline class="hero-bg-video">
+                    <source src="assets/videos/2.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+                <div class="container" style="position: relative; z-index: 2;">
                     <div class="hero-content">
                         <span class="hero-tag">Defensive Driving</span>
                         <h1 class="hero-title">Learn To Drive From The Professionals</h1>
@@ -73,33 +77,6 @@
                             <a href="calculator.html" class="btn btn-secondary">Calculate Fee</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container stats-grid">
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
-                <div class="stat-info">
-                    <h3 class="stat-number">15,000+</h3>
-                    <p class="stat-label">Licensed Students</p>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-car"></i></div>
-                <div class="stat-info">
-                    <h3 class="stat-number">13+ Years</h3>
-                    <p class="stat-label">Years of Coaching</p>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
-                <div class="stat-info">
-                    <h3 class="stat-number">99%</h3>
-                    <p class="stat-label">Passing Rate</p>
                 </div>
             </div>
         </div>
@@ -123,6 +100,33 @@
                 </p>
                 <div class="about-cta">
                     <a href="about.html" class="btn btn-primary">Read More About Us <i class="fa-solid fa-circle-info"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-number" data-target="15000" data-suffix="+">0</h3>
+                    <p class="stat-label">Licensed Students</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-car"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-number" data-target="13" data-suffix="+ Years">0</h3>
+                    <p class="stat-label">Years of Coaching</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+                <div class="stat-info">
+                    <h3 class="stat-number" data-target="99" data-suffix="%">0</h3>
+                    <p class="stat-label">Passing Rate</p>
                 </div>
             </div>
         </div>
@@ -264,11 +268,13 @@
 
     <!-- FAQ Section with Accordions -->
     <section class="faq-section section bg-alt">
-        <div class="container">
-            <div class="section-header">
+        <div class="container faq-grid">
+            <div class="faq-info">
                 <span class="section-tag">FAQ</span>
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Find immediate answers regarding license requirements, training processes, and fee calculations.</p>
+                <p class="faq-desc">Find immediate answers regarding license requirements, training processes, and fee calculations.</p>
+                <p class="faq-subtext">Have more questions about our classes, vehicles, or licensing support? Feel free to contact our counselor coordination team.</p>
+                <a href="#contact" class="btn btn-primary faq-contact-btn">Ask a Counselor <i class="fa-solid fa-envelope"></i></a>
             </div>
             
             <div class="faq-accordion-wrapper">
