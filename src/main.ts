@@ -1,10 +1,11 @@
-import { 
-    initScrollAnimations, 
-    initMobileNav, 
-    initHeaderScroll, 
+import {
+    initScrollAnimations,
+    initMobileNav,
+    initHeaderScroll,
     initGalleryTabs,
     initFaqAccordion,
-    initStatsCounter
+    initStatsCounter,
+    initRtoConsole
 } from './utils/animations';
 import { initCoursesSection } from './components/courses';
 import { initFeeCalculator } from './components/feeCalculator';
@@ -56,13 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Home Page (or root "/")
             initFaqAccordion();
             initStatsCounter();
-            
+            initRtoConsole();
+
             // Quick Contact Counselor Form Submission
             const contactForm = document.getElementById('directContactForm') as HTMLFormElement;
             if (contactForm) {
                 contactForm.addEventListener('submit', (e) => {
                     e.preventDefault();
-                    
+
                     const nameVal = (document.getElementById('cName') as HTMLInputElement).value;
                     const phoneVal = (document.getElementById('cPhone') as HTMLInputElement).value;
                     const emailVal = (document.getElementById('cEmail') as HTMLInputElement).value || 'Not provided';
@@ -86,7 +88,7 @@ _Sent from Driving School Web Platform._`;
                     const encoded = encodeURIComponent(text);
                     const whatsappNumber = '919011051238'; // Direct firm WhatsApp number
                     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encoded}`;
-                    
+
                     window.open(whatsappUrl, '_blank');
                     alert('Your inquiry was processed. Redirecting to WhatsApp to chat with our coordinator.');
                     contactForm.reset();

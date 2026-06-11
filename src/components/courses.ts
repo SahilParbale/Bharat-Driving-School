@@ -109,7 +109,7 @@ export function initCoursesSection(onBookClick: (courseId: string) => void): voi
             <button class="filter-tab" data-filter="bike">Two-Wheelers (Bike)</button>
             <button class="filter-tab" data-filter="combo">Combo Offers</button>
         </div>
-        <div class="courses-grid" id="courses-grid-container"></div>
+        <div class="course-list-horizontal" id="courses-grid-container"></div>
     `;
 
     const gridContainer = document.getElementById('courses-grid-container');
@@ -124,7 +124,7 @@ export function initCoursesSection(onBookClick: (courseId: string) => void): voi
 
         filtered.forEach(course => {
             const card = document.createElement('div');
-            card.className = 'course-card reveal';
+            card.className = 'course-card-horizontal reveal';
             
             // Build features HTML list
             const featuresHtml = course.features
@@ -132,26 +132,27 @@ export function initCoursesSection(onBookClick: (courseId: string) => void): voi
                 .join('');
 
             card.innerHTML = `
-                <div class="course-img-wrapper">
-                    <img src="${course.image}" alt="${course.title}" class="course-img">
-                    ${course.badge ? `<span class="course-badge">${course.badge}</span>` : ''}
+                <div class="course-img-area">
+                    <img src="${course.image}" alt="${course.title}">
+                    ${course.badge ? `<span class="course-img-badge">${course.badge}</span>` : ''}
                 </div>
-                <div class="course-content">
-                    <h3 class="course-title">${course.title}</h3>
-                    <div class="course-details">
-                        <span><i class="fa-solid fa-clock"></i> ${course.duration}</span>
-                        <span><i class="fa-solid fa-road"></i> ${course.sessions}</span>
+                <div class="course-info-area">
+                    <h3>${course.title}</h3>
+                    <div class="course-meta-pills">
+                        <span class="meta-pill"><i class="fa-solid fa-clock"></i> ${course.duration}</span>
+                        <span class="meta-pill"><i class="fa-solid fa-road"></i> ${course.sessions}</span>
+                        <span class="meta-pill"><i class="fa-solid fa-car-side"></i> ${course.category}</span>
                     </div>
-                    <ul class="course-features">
+                    <ul class="course-features-list">
                         ${featuresHtml}
                     </ul>
-                    <div class="course-footer">
-                        <div class="course-price">
-                            <span class="price-label">Price Package</span>
-                            <span class="price-amount">₹${course.price.toLocaleString('en-IN')}</span>
-                        </div>
-                        <button class="btn btn-primary book-btn" data-id="${course.id}">Book Training</button>
+                </div>
+                <div class="course-action-area">
+                    <div class="course-price-box">
+                        <span class="price-lbl">Full Package</span>
+                        <span class="price-val">₹${course.price.toLocaleString('en-IN')}</span>
                     </div>
+                    <button class="btn btn-primary book-btn" style="width: 100%;" data-id="${course.id}">Book Training</button>
                 </div>
             `;
             gridContainer.appendChild(card);
@@ -159,7 +160,7 @@ export function initCoursesSection(onBookClick: (courseId: string) => void): voi
 
         // Trigger animations
         setTimeout(() => {
-            const cards = gridContainer.querySelectorAll('.course-card');
+            const cards = gridContainer.querySelectorAll('.course-card-horizontal');
             cards.forEach(c => c.classList.add('active'));
         }, 50);
 

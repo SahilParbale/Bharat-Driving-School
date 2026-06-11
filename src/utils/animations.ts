@@ -1,6 +1,6 @@
 export function initScrollAnimations(): void {
     const reveals = document.querySelectorAll('.reveal');
-    
+
     const observerOptions = {
         root: null,
         threshold: 0.05,
@@ -11,7 +11,7 @@ export function initScrollAnimations(): void {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const target = entry.target as HTMLElement;
-                
+
                 // Add stagger effect if part of a grid/list
                 const parent = target.parentElement;
                 if (parent && (parent.classList.contains('courses-grid') || parent.classList.contains('grid') || parent.classList.contains('services-grid'))) {
@@ -21,7 +21,7 @@ export function initScrollAnimations(): void {
                         target.style.transitionDelay = `${index * 120}ms`;
                     }
                 }
-                
+
                 target.classList.add('active');
                 observer.unobserve(target);
             }
@@ -36,12 +36,12 @@ export function initScrollAnimations(): void {
 export function initMobileNav(): void {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
-    
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
-            
+
             // Toggle hamburger animation
             const bars = navToggle.querySelectorAll('.bar');
             if (navToggle.classList.contains('active')) {
@@ -86,14 +86,14 @@ export function initHeaderScroll(): void {
 export function initGalleryTabs(): void {
     const tabs = document.querySelectorAll('.gallery-tab');
     const contents = document.querySelectorAll('.tab-content');
-    
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const tabTarget = tab.getAttribute('data-tab');
-            
+
             tabs.forEach(t => t.classList.remove('active'));
             contents.forEach(c => c.classList.remove('active'));
-            
+
             tab.classList.add('active');
             const targetContent = document.getElementById(`gallery-${tabTarget}`);
             if (targetContent) {
@@ -105,22 +105,22 @@ export function initGalleryTabs(): void {
 
 export function initFaqAccordion(): void {
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
     faqItems.forEach(item => {
         const trigger = item.querySelector('.faq-trigger');
         const content = item.querySelector('.faq-content') as HTMLElement;
-        
+
         if (trigger && content) {
             trigger.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
-                
+
                 // Close all other FAQs
                 faqItems.forEach(i => {
                     i.classList.remove('active');
                     const c = i.querySelector('.faq-content') as HTMLElement;
                     if (c) c.style.maxHeight = '0';
                 });
-                
+
                 if (!isActive) {
                     item.classList.add('active');
                     content.style.maxHeight = `${content.scrollHeight + 50}px`;
@@ -146,7 +146,7 @@ export function initStatsCounter(): void {
         entries.forEach(entry => {
             const targetEl = entry.target as HTMLElement;
             const suffix = targetEl.getAttribute('data-suffix') || '';
-            
+
             if (entry.isIntersecting) {
                 // Trigger the count-up animation when scrolling into view (from any direction)
                 animateSingleNumber(targetEl);
@@ -166,7 +166,7 @@ export function initStatsCounter(): void {
         // Set initial state immediately to 0 + suffix
         const suffix = el.getAttribute('data-suffix') || '';
         el.textContent = '0' + suffix;
-        
+
         // Start observing this specific counter element
         observer.observe(el);
     });
@@ -194,7 +194,7 @@ export function initStatsCounter(): void {
                 const easeProgress = progress * (2 - progress);
                 const currentValue = Math.floor(easeProgress * target);
                 htmlEl.textContent = currentValue.toLocaleString() + suffix;
-                
+
                 const nextAnimId = requestAnimationFrame(updateNumber);
                 htmlEl.dataset.animationId = nextAnimId.toString();
             }
@@ -203,4 +203,25 @@ export function initStatsCounter(): void {
         const firstAnimId = requestAnimationFrame(updateNumber);
         htmlEl.dataset.animationId = firstAnimId.toString();
     }
+}
+
+export function initRtoConsole(): void {
+    const buttons = document.querySelectorAll('.rto-console-btn');
+    const panels = document.querySelectorAll('.rto-panel');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetRto = btn.getAttribute('data-rto');
+            if (!targetRto) return;
+
+            buttons.forEach(b => b.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            const activePanel = document.getElementById(`rto-${targetRto}`);
+            if (activePanel) {
+                activePanel.classList.add('active');
+            }
+        });
+    });
 }
