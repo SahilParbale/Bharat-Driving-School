@@ -1,87 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+const fs = require('fs');
+const path = require('path');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fee Calculator | Bharat Motor Driving School</title>
-    <meta name="description"
-        content="Calculate your driving lesson package fee instantly with our interactive cost estimator. Choose vehicle types, training days, and licensing support.">
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+const filesToUpdate = [
+    'index.html',
+    'about.html',
+    'courses.html',
+    'calculator.html',
+    'branches.html',
+    'gallery.html'
+];
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <!-- Header Navigation -->
-    <header class="header">
-        <div class="container header-wrapper">
-            <div style="display: flex; align-items: center; gap: 1rem;">
-                <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="BMDS Logo" class="logo-img">
-                    <div class="logo-text">
-                        <span class="logo-title">BHARAT</span>
-                        <span class="logo-subtitle">Driving School</span>
-                    </div>
-                </a>
-                <div class="header-trust-badge">
-                    <div class="google-stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <span>4.9 ★ (2,450+ Google Reviews)</span>
-                </div>
-            </div>
-
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </button>
-
-            <nav class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="courses.html" class="nav-link">Courses</a>
-                <a href="calculator.html" class="nav-link active">Fee Calculator</a>
-                <a href="branches.html" class="nav-link">Branches</a>
-                <a href="gallery.html" class="nav-link">Gallery</a>
-                <a href="enroll.html" class="nav-link nav-btn" id="enrollTrigger">Enroll Now</a>
-            </nav>
-        </div>
-    </header>
-
-
-    <main id="page-content">
-        <!-- Subpage Hero Banner -->
-        <section class="subpage-hero" style="background: var(--color-white); padding: 3rem 0 1.5rem 0; border-bottom: none;">
-            <div class="container">
-                <div class="subpage-hero-content" style="max-width: 100%;">
-                    <h1 class="subpage-title" style="color: var(--color-text-dark); position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 2.5rem; font-weight: 800;">
-                        Fee Calculator
-                        <span style="position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background-color: var(--color-accent); border-radius: 2px;"></span>
-                    </h1>
-                </div>
-            </div>
-        </section>
-
-        <!-- Calculator Section -->
-        <section class="calculator-section section" id="calculator">
-            <div class="container">
-                <div id="calculator-root">
-                    <!-- Mounted dynamically by feeCalculator.ts -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-        <!-- Footer -->
+const newFooterHTML = `    <!-- Footer -->
     <footer class="footer-new">
+        <!-- Feature Bar -->
+        <div class="footer-features-bar">
+            <div class="container footer-features-grid">
+                <div class="footer-feature-item">
+                    <div class="footer-feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="footer-feature-text">
+                        <h4>Expert Trainers</h4>
+                        <p>Certified professionals with years of experience</p>
+                    </div>
+                </div>
+                <div class="footer-feature-divider"></div>
+                <div class="footer-feature-item">
+                    <div class="footer-feature-icon"><i class="fa-solid fa-car"></i></div>
+                    <div class="footer-feature-text">
+                        <h4>Safe & Secure</h4>
+                        <p>Well maintained vehicles & safety first approach</p>
+                    </div>
+                </div>
+                <div class="footer-feature-divider"></div>
+                <div class="footer-feature-item">
+                    <div class="footer-feature-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="footer-feature-text">
+                        <h4>Proven Results</h4>
+                        <p>Thousands of happy licensed drivers</p>
+                    </div>
+                </div>
+                <div class="footer-feature-divider"></div>
+                <div class="footer-feature-item">
+                    <div class="footer-feature-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div class="footer-feature-text">
+                        <h4>24/7 Support</h4>
+                        <p>We're here to help you anytime, anywhere</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="footer-main">
             <div class="container footer-main-grid">
                 <!-- Column 1: Brand -->
@@ -148,7 +115,28 @@
                         </form>
                     </div>
 
+                    <div class="footer-divider-dotted"></div>
 
+                    <div class="footer-app">
+                        <h4 class="footer-heading">DOWNLOAD OUR APP</h4>
+                        <p>Book classes, track progress &amp; more.</p>
+                        <div class="footer-app-badges">
+                            <a href="#" class="app-badge store-badge-css">
+                                <i class="fa-brands fa-google-play"></i>
+                                <div class="badge-text">
+                                    <span class="small-text">GET IT ON</span>
+                                    <span class="large-text">Google Play</span>
+                                </div>
+                            </a>
+                            <a href="#" class="app-badge store-badge-css">
+                                <i class="fa-brands fa-apple"></i>
+                                <div class="badge-text">
+                                    <span class="small-text">Download on the</span>
+                                    <span class="large-text">App Store</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,18 +161,18 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>`;
 
-    <!-- Floating Support Bubble -->
-    <a href="https://wa.me/919922211238?text=Hello,%20I%20want%20to%20inquire%20about%20your%20driving%20school%20courses." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with a Counselor on WhatsApp">
-        <div class="whatsapp-tooltip">Chat with a Counselor</div>
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+const footerRegex = /<!-- Footer -->[\s\S]*?<\/footer>/i;
 
-    
-
-    <!-- JS Entrypoint -->
-    <script type="module" src="/src/main.ts"></script>
-</body>
-
-</html>
+filesToUpdate.forEach(file => {
+    const filePath = path.join(__dirname, file);
+    if (fs.existsSync(filePath)) {
+        let content = fs.readFileSync(filePath, 'utf8');
+        content = content.replace(footerRegex, newFooterHTML);
+        fs.writeFileSync(filePath, content, 'utf8');
+        console.log("Updated " + file);
+    } else {
+        console.log("File " + file + " not found.");
+    }
+});

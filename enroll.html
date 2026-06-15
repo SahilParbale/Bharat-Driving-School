@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now | Bharat Motor Driving School</title>
+    <meta name="description"
+        content="Enroll today at Bharat Motor Driving School. Fast-track your driving journey with Pune's top-rated safety-first motor coaching academy.">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container header-wrapper">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="BMDS Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">BHARAT</span>
+                        <span class="logo-subtitle">Driving School</span>
+                    </div>
+                </a>
+                <div class="header-trust-badge">
+                    <div class="google-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <span>4.9 ★ (2,450+ Google Reviews)</span>
+                </div>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="calculator.html" class="nav-link">Fee Calculator</a>
+                <a href="branches.html" class="nav-link">Branches</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="enroll.html" class="nav-link nav-btn active" id="enrollTrigger">Enroll Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="page-content" style="background-color: var(--color-bg-light); padding-bottom: 4rem;">
+        <!-- Subpage Hero Banner -->
+        <section class="subpage-hero" style="background: var(--color-white); padding: 3rem 0 1.5rem 0; border-bottom: 1px solid var(--color-border);">
+            <div class="container">
+                <div class="subpage-hero-content" style="max-width: 100%;">
+                    <h1 class="subpage-title" style="color: var(--color-text-dark); position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 2.5rem; font-weight: 800;">
+                        Secure Your Spot
+                        <span style="position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background-color: var(--color-accent); border-radius: 2px;"></span>
+                    </h1>
+                    <p style="color: var(--color-text-muted); margin-top: 1rem; font-size: 1.05rem;">
+                        Complete your enrollment in under 2 minutes. We'll verify your details and connect with you on WhatsApp to finalize your training schedule.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enrollment Form Section -->
+        <section class="enroll-section" style="padding-top: 3rem;">
+            <div class="container" style="max-width: 1100px; margin: 0 auto;">
+                <form id="enrollmentForm" class="enroll-form-col">
+                    <div class="enroll-master-card" style="padding: 3rem;">
+                        
+                        <div class="form-sections-grid">
+                            <!-- Section 1 -->
+                            <div class="form-section">
+                                <h3 class="form-section-title"><i class="fa-solid fa-graduation-cap"></i> 1. Course Selection</h3>
+                                <div class="enhanced-input-group">
+                                    <label for="enrollCourseSelect">Driving Package</label>
+                                    <div class="input-with-icon">
+                                        <i class="fa-solid fa-car-side"></i>
+                                        <select id="enrollCourseSelect" required class="enhanced-control"></select>
+                                    </div>
+                                </div>
+                                <div class="enhanced-input-group">
+                                    <label for="enrollBranchSelect">Training Branch</label>
+                                    <div class="input-with-icon">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <select id="enrollBranchSelect" required class="enhanced-control">
+                                            <option value="dhankwadi">Shri Bharat MDS (Dhankwadi)</option>
+                                            <option value="dhayari">New Bharat MDS (Dhayari)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Section 2 -->
+                            <div class="form-section">
+                                <h3 class="form-section-title"><i class="fa-regular fa-calendar-check"></i> 2. Scheduling</h3>
+                                <div class="enhanced-input-group">
+                                    <label for="enrollStartDate">Preferred Start Date</label>
+                                    <div class="input-with-icon">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        <input type="date" id="enrollStartDate" required class="enhanced-control">
+                                    </div>
+                                </div>
+                                <div class="enhanced-input-group" style="margin-top: 0.5rem;">
+                                    <label>Daily Time Slot</label>
+                                    <div class="radio-group-grid" style="grid-template-columns: 1fr; gap: 0.75rem;">
+                                        <label class="radio-card custom-radio-label">
+                                            <input type="radio" name="enrollTimeSlot" value="morning" checked>
+                                            <div class="radio-card-content">
+                                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                                    <i class="fa-solid fa-cloud-sun"></i><span>Morning (7 AM - 11 AM)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="radio-card custom-radio-label">
+                                            <input type="radio" name="enrollTimeSlot" value="afternoon">
+                                            <div class="radio-card-content">
+                                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                                    <i class="fa-solid fa-sun"></i><span>Afternoon (12 PM - 4 PM)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="radio-card custom-radio-label">
+                                            <input type="radio" name="enrollTimeSlot" value="evening">
+                                            <div class="radio-card-content">
+                                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                                    <i class="fa-solid fa-moon"></i><span>Evening (5 PM - 9 PM)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 3 -->
+                            <div class="form-section">
+                                <h3 class="form-section-title"><i class="fa-regular fa-address-card"></i> 3. Personal Details</h3>
+                                <div class="enhanced-input-group">
+                                    <label for="enrollName">Full Name</label>
+                                    <div class="input-with-icon">
+                                        <i class="fa-regular fa-user"></i>
+                                        <input type="text" id="enrollName" placeholder="Enter your full name" required class="enhanced-control">
+                                    </div>
+                                </div>
+                                <div class="enhanced-grid-2">
+                                    <div class="enhanced-input-group">
+                                        <label for="enrollPhone">Mobile Number</label>
+                                        <div class="input-with-icon">
+                                            <i class="fa-solid fa-phone"></i>
+                                            <input type="tel" id="enrollPhone" placeholder="10-digit mobile number" required class="enhanced-control">
+                                        </div>
+                                    </div>
+                                    <div class="enhanced-input-group">
+                                        <label for="enrollEmail">Email Address</label>
+                                        <div class="input-with-icon">
+                                            <i class="fa-regular fa-envelope"></i>
+                                            <input type="email" id="enrollEmail" placeholder="name@domain.com" class="enhanced-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="enhanced-input-group">
+                                    <label for="enrollAddress">Pick-up Address (Optional)</label>
+                                    <div class="input-with-icon align-top">
+                                        <i class="fa-solid fa-map-pin" style="margin-top: 14px;"></i>
+                                        <textarea id="enrollAddress" rows="3" placeholder="Include complete address details for doorstep pickup services" class="enhanced-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 4: Order Summary -->
+                            <div class="form-section" style="background: var(--color-bg-light); padding: 1.5rem; border-radius: var(--border-radius-lg); border: 1px solid var(--color-border);">
+                                <h3 class="form-section-title"><i class="fa-solid fa-receipt"></i> 4. Order Summary</h3>
+                                <div class="invoice-summary" style="background: transparent; padding: 0; border: none; margin-top: 1rem;">
+                                    <div class="invoice-row">
+                                        <span class="invoice-label" id="enrollSummaryCourseName" style="font-weight: 600; color: var(--color-text-dark);">Selected Course</span>
+                                        <span class="invoice-value" id="enrollSummaryCoursePrice" style="font-weight: 700; color: var(--color-primary);">₹0.00</span>
+                                    </div>
+                                    <div class="invoice-row">
+                                        <span class="invoice-label">Branch</span>
+                                        <span class="invoice-value" id="enrollSummaryBranch">Dhankwadi</span>
+                                    </div>
+                                    <div class="invoice-row">
+                                        <span class="invoice-label">Schedule Start</span>
+                                        <span class="invoice-value" id="enrollSummarySchedule">--</span>
+                                    </div>
+                                    <div class="invoice-row">
+                                        <span class="invoice-label">Doorstep Pick-up</span>
+                                        <span class="invoice-value" id="enrollSummaryPickup">--</span>
+                                    </div>
+                                    <hr class="invoice-divider" style="margin: 1.25rem 0;">
+                                    <div class="invoice-row total" style="font-size: 1.25rem;">
+                                        <span class="invoice-label" style="font-weight: 800;">Total Fee</span>
+                                        <span class="invoice-value" id="enrollSummaryTotal" style="font-weight: 800; color: var(--color-primary);">₹0.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="form-divider" style="margin: 2.5rem 0;">
+
+                        <div style="display: flex; flex-direction: column; align-items: center; max-width: 500px; margin: 0 auto;">
+                            <div class="trust-indicators" style="margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--color-text-muted); display: flex; flex-direction: column; align-items: center; text-align: center;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center; margin-bottom: 0.25rem;">
+                                    <i class="fa-solid fa-lock" style="color: #10B981;"></i> <span>Your data is 100% secure</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                                    <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.1rem;"></i> <span>Reservation via WhatsApp</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; font-size: 1.15rem; padding: 1.15rem;">
+                                Confirm Slot <i class="fa-solid fa-check" style="margin-left: 0.5rem;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-main">
+            <div class="container footer-main-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-brand-col">
+                    <div class="footer-logo-row">
+                        <img src="assets/images/logo.png" alt="BMDS" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <h3>Bharat Motor</h3>
+                            <h3>Driving School</h3>
+                        </div>
+                    </div>
+                    <p class="footer-desc">Empowering drivers with premium coaching, defensive training, and comprehensive licensing services since 2013.</p>
+                    
+                    <ul class="footer-contact-list">
+                        <li><i class="fa-solid fa-phone"></i> <span>9101051238</span></li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span>Katraj &bull; Dhankwadi &bull; Dhayari, Pune</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <span>bharatmotordriving@gmail.com</span></li>
+                        <li><i class="fa-regular fa-clock"></i> <span>Mon - Sun: 7:00 AM - 9:00 PM</span></li>
+                    </ul>
+
+                    <div class="footer-socials-circle">
+                        <a href="https://wa.me/919922211238" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-google"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <div class="footer-nav-col">
+                    <h4 class="footer-heading">NAVIGATION</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses Offered</a></li>
+                        <li><a href="calculator.html">Fee Calculator</a></li>
+                        <li><a href="branches.html">Our Branches</a></li>
+                        <li><a href="gallery.html">Media Gallery</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Primary Services -->
+                <div class="footer-nav-col">
+                    <h4 class="footer-heading">PRIMARY SERVICES</h4>
+                    <ul>
+                        <li><a href="courses.html">Car Training</a></li>
+                        <li><a href="courses.html">SUV Training</a></li>
+                        <li><a href="courses.html">Two-Wheeler Classes</a></li>
+                        <li><a href="index.html#services">RTO Guidance</a></li>
+                        <li><a href="https://sarathi.parivahan.gov.in" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem; margin-right: 4px;"></i> Sarathi RTO Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Stay Updated -->
+                <div class="footer-action-col">
+                    <div class="footer-subscribe">
+                        <h4 class="footer-heading">STAY UPDATED</h4>
+                        <p>Subscribe to get updates on new courses, offers &amp; driving tips.</p>
+                        <form class="footer-subscribe-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 Bharat Motor Driving School. All Rights Reserved.</p>
+                <div class="footer-payments">
+                    <span><i class="fa-solid fa-lock"></i> 100% SECURED PAYMENT VIA:</span>
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <span class="rupay-text">RuPay</span>
+                    <i class="fa-solid fa-qrcode"></i>
+                    <span class="upi-text">UPI</span>
+                </div>
+                <div class="footer-policies">
+                    <a href="#">Privacy Policy</a>
+                    <span class="sep">|</span>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <span class="sep">|</span>
+                    <a href="#">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Support Bubble -->
+    <a href="https://wa.me/919922211238?text=Hello,%20I%20want%20to%20inquire%20about%20your%20driving%20school%20courses." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with a Counselor on WhatsApp">
+        <div class="whatsapp-tooltip">Chat with a Counselor</div>
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JS Entrypoint -->
+    <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

@@ -51,7 +51,7 @@
                 <a href="calculator.html" class="nav-link">Fee Calculator</a>
                 <a href="branches.html" class="nav-link">Branches</a>
                 <a href="gallery.html" class="nav-link">Gallery</a>
-                <a href="#" class="nav-link nav-btn" id="enrollTrigger">Enroll Now</a>
+                <a href="enroll.html" class="nav-link nav-btn" id="enrollTrigger">Enroll Now</a>
             </nav>
         </div>
     </header>
@@ -193,7 +193,7 @@
                 </div>
                 
                 <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-                    <a href="#" class="btn btn-primary btn-lg" id="aboutEnrollTrigger" style="box-shadow: 0 10px 20px rgba(251, 211, 1, 0.2); font-weight: 700; padding: 1rem 2.5rem; font-size: 1.1rem;">
+                    <a href="enroll.html" class="btn btn-primary btn-lg" id="aboutEnrollTrigger" style="box-shadow: 0 10px 20px rgba(251, 211, 1, 0.2); font-weight: 700; padding: 1rem 2.5rem; font-size: 1.1rem;">
                         Start Learning Today <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
                     </a>
                     <span style="font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 0.35rem; margin-top: 0.5rem;">
@@ -204,48 +204,96 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="assets/images/logo.png" alt="BMDS" class="footer-logo">
-                <h3>Bharat Motor Driving School</h3>
-                <p>Empowering drivers with premium coaching, defensive training, and comprehensive licensing services since 2013.</p>
-                <div class="footer-socials">
-                    <a href="https://wa.me/919922211238" class="footer-social" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-main">
+            <div class="container footer-main-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-brand-col">
+                    <div class="footer-logo-row">
+                        <img src="assets/images/logo.png" alt="BMDS" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            <h3>Bharat Motor</h3>
+                            <h3>Driving School</h3>
+                        </div>
+                    </div>
+                    <p class="footer-desc">Empowering drivers with premium coaching, defensive training, and comprehensive licensing services since 2013.</p>
+                    
+                    <ul class="footer-contact-list">
+                        <li><i class="fa-solid fa-phone"></i> <span>9101051238</span></li>
+                        <li><i class="fa-solid fa-location-dot"></i> <span>Katraj &bull; Dhankwadi &bull; Dhayari, Pune</span></li>
+                        <li><i class="fa-solid fa-envelope"></i> <span>bharatmotordriving@gmail.com</span></li>
+                        <li><i class="fa-regular fa-clock"></i> <span>Mon - Sun: 7:00 AM - 9:00 PM</span></li>
+                    </ul>
+
+                    <div class="footer-socials-circle">
+                        <a href="https://wa.me/919922211238" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-google"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <div class="footer-nav-col">
+                    <h4 class="footer-heading">NAVIGATION</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses Offered</a></li>
+                        <li><a href="calculator.html">Fee Calculator</a></li>
+                        <li><a href="branches.html">Our Branches</a></li>
+                        <li><a href="gallery.html">Media Gallery</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Primary Services -->
+                <div class="footer-nav-col">
+                    <h4 class="footer-heading">PRIMARY SERVICES</h4>
+                    <ul>
+                        <li><a href="courses.html">Car Training</a></li>
+                        <li><a href="courses.html">SUV Training</a></li>
+                        <li><a href="courses.html">Two-Wheeler Classes</a></li>
+                        <li><a href="index.html#services">RTO Guidance</a></li>
+                        <li><a href="https://sarathi.parivahan.gov.in" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem; margin-right: 4px;"></i> Sarathi RTO Portal</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Stay Updated & App -->
+                <div class="footer-action-col">
+                    <div class="footer-subscribe">
+                        <h4 class="footer-heading">STAY UPDATED</h4>
+                        <p>Subscribe to get updates on new courses, offers &amp; driving tips.</p>
+                        <form class="footer-subscribe-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="button">Subscribe</button>
+                        </form>
+                    </div>
+
+
                 </div>
             </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="courses.html">Courses Offered</a></li>
-                    <li><a href="calculator.html">Fee Calculator</a></li>
-                    <li><a href="branches.html">Our Branches</a></li>
-                    <li><a href="gallery.html">Media Gallery</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>Primary Services</h4>
-                <ul>
-                    <li><a href="courses.html">Car Training</a></li>
-                    <li><a href="courses.html">SUV Training</a></li>
-                    <li><a href="courses.html">Two-Wheeler Classes</a></li>
-                    <li><a href="index.html#services">RTO Guidance</a></li>
-                    <li><a href="https://sarathi.parivahan.gov.in" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem; margin-right: 4px;"></i> Sarathi RTO Portal</a></li>
-                </ul>
-            </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container footer-bottom-wrapper">
+
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-flex">
                 <p>&copy; 2026 Bharat Motor Driving School. All Rights Reserved.</p>
-                <div class="footer-payment-badges" style="display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; color: rgba(255, 255, 255, 0.35);">
-                    <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.25rem;">100% Secured Payment via:</span>
-                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
-                    <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
-                    <i class="fa-solid fa-qrcode" title="UPI Apps"></i>
-                    <span style="font-size: 0.85rem; font-weight: 800; color: rgba(255, 255, 255, 0.5);">UPI</span>
+                <div class="footer-payments">
+                    <span><i class="fa-solid fa-lock"></i> 100% SECURED PAYMENT VIA:</span>
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <span class="rupay-text">RuPay</span>
+                    <i class="fa-solid fa-qrcode"></i>
+                    <span class="upi-text">UPI</span>
+                </div>
+                <div class="footer-policies">
+                    <a href="#">Privacy Policy</a>
+                    <span class="sep">|</span>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <span class="sep">|</span>
+                    <a href="#">Refund Policy</a>
                 </div>
             </div>
         </div>
@@ -257,146 +305,7 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Enrollment Modal -->
-    <div class="modal-overlay" id="bookingModalOverlay">
-        <div class="booking-modal" id="bookingModal">
-            <button class="modal-close" id="modalCloseBtn">&times;</button>
-            <div class="modal-header">
-                <h2>Driving School Enrollment</h2>
-                <div class="modal-steps">
-                    <div class="modal-step active" data-step="1">1</div>
-                    <div class="modal-step" data-step="2">2</div>
-                    <div class="modal-step" data-step="3">3</div>
-                    <div class="modal-step" data-step="4">4</div>
-                </div>
-                <div class="modal-step-labels">
-                    <span class="active">Course</span><span>Schedule</span><span>Details</span><span>Summary</span>
-                </div>
-            </div>
-
-            <form id="bookingCheckoutForm">
-                <div class="modal-step-content active" data-step-content="1">
-                    <h3>Select Package & Branch</h3>
-                    <div class="form-group">
-                        <label for="bookCourseSelect">Select Driving Package</label>
-                        <select id="bookCourseSelect" required></select>
-                    </div>
-                    <div class="form-group">
-                        <label for="bookBranchSelect">Select Training Branch</label>
-                        <select id="bookBranchSelect" required>
-                            <option value="dhankwadi">Shri Bharat MDS (Dhankwadi)</option>
-                            <option value="dhayari">New Bharat MDS (Dhayari)</option>
-                        </select>
-                    </div>
-                    <div class="modal-actions">
-                        <button type="button" class="btn btn-secondary"
-                            style="opacity: 0; pointer-events: none;">Back</button>
-                        <button type="button" class="btn btn-primary next-step-btn">Next Step <i
-                                class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                </div>
-
-                <div class="modal-step-content" data-step-content="2">
-                    <h3>Preferred Scheduling</h3>
-                    <div class="form-group">
-                        <label for="bookStartDate">Preferred Start Date</label>
-                        <input type="date" id="bookStartDate" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Preferred Daily Time Slot</label>
-                        <div class="radio-group">
-                            <label class="radio-card">
-                                <input type="radio" name="timeSlot" value="morning" checked>
-                                <div class="radio-card-content">
-                                    <i class="fa-solid fa-cloud-sun"></i><span>Morning (7 AM - 11 AM)</span>
-                                </div>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="timeSlot" value="afternoon">
-                                <div class="radio-card-content">
-                                    <i class="fa-solid fa-sun"></i><span>Afternoon (12 PM - 4 PM)</span>
-                                </div>
-                            </label>
-                            <label class="radio-card">
-                                <input type="radio" name="timeSlot" value="evening">
-                                <div class="radio-card-content">
-                                    <i class="fa-solid fa-moon"></i><span>Evening (5 PM - 9 PM)</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="modal-actions">
-                        <button type="button" class="btn btn-secondary prev-step-btn"><i
-                                class="fa-solid fa-arrow-left"></i> Back</button>
-                        <button type="button" class="btn btn-primary next-step-btn">Next Step <i
-                                class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                </div>
-
-                <div class="modal-step-content" data-step-content="3">
-                    <h3>Contact & Pickup Location</h3>
-                    <div class="form-group">
-                        <label for="bookName">Full Name</label>
-                        <input type="text" id="bookName" placeholder="Enter your full name" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="bookPhone">Phone Number</label>
-                            <input type="tel" id="bookPhone" placeholder="10-digit mobile number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="bookEmail">Email Address</label>
-                            <input type="email" id="bookEmail" placeholder="name@domain.com">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="bookAddress">Pick-up Address (Optional)</label>
-                        <textarea id="bookAddress" rows="2"
-                            placeholder="Include address details for doorstep pickup services"></textarea>
-                    </div>
-                    <div class="modal-actions">
-                        <button type="button" class="btn btn-secondary prev-step-btn"><i
-                                class="fa-solid fa-arrow-left"></i> Back</button>
-                        <button type="button" class="btn btn-primary next-step-btn">Next Step <i
-                                class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                </div>
-
-                <div class="modal-step-content" data-step-content="4">
-                    <h3>Enrollment Summary</h3>
-                    <div class="invoice-summary">
-                        <div class="invoice-row">
-                            <span class="invoice-label" id="summaryCourseName">Selected Course</span>
-                            <span class="invoice-value" id="summaryCoursePrice">₹0.00</span>
-                        </div>
-                        <div class="invoice-row">
-                            <span class="invoice-label">Branch</span>
-                            <span class="invoice-value" id="summaryBranch">Dhankwadi</span>
-                        </div>
-                        <div class="invoice-row">
-                            <span class="invoice-label">Schedule Start</span>
-                            <span class="invoice-value" id="summarySchedule">--</span>
-                        </div>
-                        <div class="invoice-row">
-                            <span class="invoice-label">Doorstep Pick-up</span>
-                            <span class="invoice-value" id="summaryPickup">--</span>
-                        </div>
-                        <hr class="invoice-divider">
-                        <div class="invoice-row total">
-                            <span class="invoice-label">Total Fee</span>
-                            <span class="invoice-value" id="summaryTotal">₹0.00</span>
-                        </div>
-                    </div>
-                    <div class="modal-actions">
-                        <button type="button" class="btn btn-secondary prev-step-btn"><i
-                                class="fa-solid fa-arrow-left"></i> Back</button>
-                        <button type="submit" class="btn btn-primary">Complete Reservation <i
-                                class="fa-solid fa-check"></i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+    
 
     <!-- JS Entrypoint -->
     <script type="module" src="/src/main.ts"></script>

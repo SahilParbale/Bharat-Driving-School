@@ -10,49 +10,29 @@ import {
 import { initCoursesSection } from './components/courses';
 import { initFeeCalculator } from './components/feeCalculator';
 import { initBranchesSection } from './components/branches';
-import { BookingModal } from './components/bookingModal';
+import { initEnrollPage } from './components/enroll';
 import { Router } from './utils/router';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Instantiate the global Booking Modal (Checkout flow)
-    const bookingModal = new BookingModal();
-
     // 2. Initialize layout / design animations & scroll effects
     initMobileNav();
     initHeaderScroll();
-
-    // 3. Bind Global Enroll Nav button click
-    const enrollTrigger = document.getElementById('enrollTrigger');
-    if (enrollTrigger) {
-        enrollTrigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            bookingModal.open();
-        });
-    }
 
     // 4. Dynamic Bootloader for page-specific components
     const bootPage = (path: string) => {
         // Re-initialize reveals (IntersectionObserver)
         initScrollAnimations();
 
-        // Bind page-content triggers globally if present
-        const aboutEnrollTrigger = document.getElementById('aboutEnrollTrigger');
-        if (aboutEnrollTrigger) {
-            aboutEnrollTrigger.addEventListener('click', (e) => {
-                e.preventDefault();
-                bookingModal.open();
-            });
-        }
-
         if (path.includes('courses.html')) {
             // Courses Catalog Page
             initCoursesSection((courseId) => {
-                bookingModal.open(courseId);
+                window.location.href = `enroll.html?course=${courseId}`;
             });
         } else if (path.includes('calculator.html')) {
             // Calculator Page
             initFeeCalculator((customDetails) => {
-                bookingModal.open(undefined, customDetails);
+                localStorage.setItem('bmds_custom_enroll', JSON.stringify(customDetails));
+                window.location.href = 'enroll.html';
             });
         } else if (path.includes('branches.html')) {
             // Branches Page
@@ -62,6 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
             initGalleryTabs();
         } else if (path.includes('about.html')) {
             // About Us Page (scroll animations handled globally)
+        } else if (path.includes('enroll.html')) {
+            // Enrollment Page
+            initEnrollPage();
         } else {
             // Home Page (or root "/")
             initFaqAccordion();
@@ -85,26 +68,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Bind Home Page "Book Course" buttons directly to modal
+            // Bind Home Page "Book Course" buttons directly to enroll.html
             const bookBasic = document.getElementById('book-car-basic');
             if (bookBasic) {
                 bookBasic.addEventListener('click', (e) => {
                     e.preventDefault();
-                    bookingModal.open('car-basic');
+                    window.location.href = 'enroll.html?course=car-basic';
                 });
             }
             const bookSedan = document.getElementById('book-car-sedan');
             if (bookSedan) {
                 bookSedan.addEventListener('click', (e) => {
                     e.preventDefault();
-                    bookingModal.open('car-sedan');
+                    window.location.href = 'enroll.html?course=car-sedan';
                 });
             }
             const bookBike = document.getElementById('book-two-wheeler');
             if (bookBike) {
                 bookBike.addEventListener('click', (e) => {
                     e.preventDefault();
-                    bookingModal.open('two-wheeler');
+                    window.location.href = 'enroll.html?course=two-wheeler';
                 });
             }
 
@@ -166,4 +149,3 @@ _Sent from Driving School Web Platform._`;
     // 6. Boot the page for the current path
     bootPage(window.location.pathname);
 });
-
