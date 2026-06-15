@@ -25,7 +25,7 @@ export const COURSES_DATA: Course[] = [
             'RTO Learning license application support',
             'Single trainer assignment'
         ],
-        image: 'assets/services/5.png',
+        image: 'assets/services/img1.jpg',
         badge: 'Most Popular'
     },
     {
@@ -42,7 +42,7 @@ export const COURSES_DATA: Course[] = [
             'Night driving session (1 Hour)',
             'Full RTO license assistance & test car'
         ],
-        image: 'assets/services/10.png',
+        image: 'assets/services/img2.jpg',
         badge: 'Best Value'
     },
     {
@@ -59,7 +59,7 @@ export const COURSES_DATA: Course[] = [
             'Complex parking solutions',
             'Official RTO passing guidance'
         ],
-        image: 'assets/services/9.png',
+        image: 'assets/services/img3.jpg',
         badge: 'Premium'
     },
     {
@@ -76,7 +76,7 @@ export const COURSES_DATA: Course[] = [
             'RTO learning license prep',
             'Personal training track'
         ],
-        image: 'assets/services/8.png'
+        image: 'assets/services/img4.jpg'
     },
     {
         id: 'combo-master',
@@ -92,7 +92,7 @@ export const COURSES_DATA: Course[] = [
             'Double license processing support',
             'Full mock test practices'
         ],
-        image: 'assets/services/6.png',
+        image: 'assets/services/img5.jpg',
         badge: 'Super Saver'
     }
 ];

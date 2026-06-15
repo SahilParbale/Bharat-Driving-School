@@ -22,33 +22,24 @@
 
 <body>
 
-    <!-- Topbar Info -->
-    <div class="topbar">
-        <div class="container topbar-wrapper">
-            <div class="topbar-left">
-                <span class="topbar-item"><i class="fa-solid fa-location-dot"></i> Katraj • Dhankwadi • Dhayari,
-                    Pune</span>
-                <span class="topbar-item"><i class="fa-solid fa-phone"></i> <a
-                        href="tel:+919011051238">9011051238</a></span>
-            </div>
-            <div class="topbar-right">
-                <a href="https://wa.me/919922211238" target="_blank" class="topbar-social"><i
-                        class="fab fa-whatsapp"></i></a>
-                <span class="topbar-badge"><i class="fa-solid fa-clock"></i> Mon - Sun: 7 AM - 9 PM</span>
-            </div>
-        </div>
-    </div>
-
     <!-- Header Navigation -->
     <header class="header">
         <div class="container header-wrapper">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="BMDS Logo" class="logo-img">
-                <div class="logo-text">
-                    <span class="logo-title">BHARAT</span>
-                    <span class="logo-subtitle">Driving School</span>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="BMDS Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">BHARAT</span>
+                        <span class="logo-subtitle">Driving School</span>
+                    </div>
+                </a>
+                <div class="header-trust-badge">
+                    <div class="google-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <span>4.9 ★ (2,450+ Google Reviews)</span>
                 </div>
-            </a>
+            </div>
 
             <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
                 <span class="bar"></span><span class="bar"></span><span class="bar"></span>
@@ -75,11 +66,16 @@
                 <div class="hero-split-grid">
                     <div class="hero-content">
                         <span class="section-tag">Defensive Driving Academy</span>
-                        <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--color-primary);">Learn To Drive From The Professionals</h1>
-                        <p class="hero-desc" style="color: var(--color-text-muted); font-size: 1.15rem; margin-bottom: 2rem;">13+ years of excellence delivering safe, state-of-the-art automotive coaching in Pune, Maharashtra. Learn defensive rules and passing strategies in custom conditions.</p>
+                        <h1 class="hero-title" style="font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--color-primary);">Get Your Driving License in 15 Days — Guaranteed!</h1>
+                        <p class="hero-desc" style="color: var(--color-text-muted); font-size: 1.15rem; margin-bottom: 2rem;">Pune's highest-rated driving academy with 13+ years of excellence. Learn defensive rules in modern dual-control cars with free doorstep pickup and full RTO license support.</p>
                         <div class="hero-actions" style="display: flex; gap: 1rem;">
-                            <a href="courses.html" class="btn btn-primary">Explore Packages <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="courses.html" class="btn btn-primary" id="heroExploreBtn">Explore Packages <i class="fa-solid fa-arrow-right"></i></a>
                             <a href="calculator.html" class="btn btn-secondary" style="border-color: var(--color-primary); color: var(--color-primary);">Calculate Fee</a>
+                        </div>
+                        <div class="hero-assurances" style="display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 1.25rem; font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted);">
+                            <span><i class="fa-solid fa-circle-check" style="color: #10B981; margin-right: 4px;"></i> 100% Pass Assurance</span>
+                            <span><i class="fa-solid fa-circle-check" style="color: #10B981; margin-right: 4px;"></i> Free Doorstep Pickup & Drop</span>
+                            <span><i class="fa-solid fa-circle-check" style="color: #10B981; margin-right: 4px;"></i> No Hidden Charges</span>
                         </div>
                         <div class="hero-stats-inline">
                             <div class="hero-stat-box">
@@ -146,40 +142,106 @@
                 </div>
                 
                 <div class="bento-about-grid">
+                    <!-- Card 1: Philosophy -->
                     <div class="bento-card wide-story reveal">
-                        <div class="bento-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                        <h3>Our Driving Education Philosophy</h3>
-                        <p style="margin-bottom: 1rem;">
-                            At Bharat Motor Driving School, we treat driving as a crucial life skill rather than a chore. Over the last 13 years, we have scaled our training fleet and developed custom dual-control vehicles to keep you completely safe on the road.
-                        </p>
-                        <p>
-                            Whether you are learning to balance a geared motorcycle or estimating heavy vehicle dimensions in an SUV, our patient and certified instructors provide stress-free, personalized guidance at every stage.
-                        </p>
-                        <div style="margin-top: 2rem;">
-                            <a href="about.html" class="btn btn-dark btn-sm" style="padding: 0.6rem 1.5rem; font-size: 0.85rem;">Learn Our Full Story <i class="fa-solid fa-chevron-right"></i></a>
+                        <div class="bento-watermark"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="bento-card-header">
+                            <div class="bento-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <span class="bento-feature-badge badge-success">13+ Yrs Trust</span>
+                        </div>
+                        <h3>Professional Coaching</h3>
+                        <p>We treat driving as a crucial life skill. Learn defensive rules in top-condition cars from certified coaches with patient, stress-free guidance at every stage.</p>
+                        <div class="bento-card-list">
+                            <span><i class="fa-solid fa-user-tie"></i> Certified Male & Female Coaches</span>
+                            <span><i class="fa-solid fa-road-barrier"></i> Private Training Tracks</span>
                         </div>
                     </div>
                     
-                    <div class="bento-card square-stat reveal">
-                        <div class="bento-card-icon"><i class="fa-solid fa-compass-drafting"></i></div>
-                        <div>
-                            <span class="stat-giant">99%</span>
-                            <h3>First-Time Pass Rate</h3>
-                            <p>Our comprehensive mock testing systems, digital simulators, and dedicated RTO-specific track training prepare you to pass your official driving test on the very first try. We guide you through the learning license process, mock tracks, and final examinations for complete confidence.</p>
-                        </div>
-                    </div>
-                    
+
+                    <!-- Card 3: Doorstep Pickup -->
                     <div class="bento-card small-feature-1 reveal">
-                        <div class="bento-card-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
+                        <div class="bento-watermark"><i class="fa-solid fa-house-chimney-user"></i></div>
+                        <div class="bento-card-header">
+                            <div class="bento-card-icon"><i class="fa-solid fa-house-chimney-user"></i></div>
+                            <span class="bento-feature-badge badge-success">Pune Covered</span>
+                        </div>
                         <h3>Doorstep Pickup & Drop</h3>
-                        <p>Every premium car course package includes free doorstep pickup and drop-off from your home, college, or workplace across Pune.</p>
+                        <p>Every premium car course package includes free doorstep pickup and drop-off from your home, college, or workplace. Scheduled hourly to match your routine.</p>
+                        <div class="bento-card-list">
+                            <span><i class="fa-solid fa-location-dot"></i> Katraj • Dhankwadi • Dhayari & Nearby</span>
+                            <span><i class="fa-solid fa-circle-check"></i> Zero Extra Fuel Surcharges</span>
+                        </div>
                     </div>
                     
+                    <!-- Card 4: Dual Control -->
                     <div class="bento-card small-feature-2 reveal">
-                        <div class="bento-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="bento-watermark"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="bento-card-header">
+                            <div class="bento-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <span class="bento-feature-badge badge-info">100% Safe</span>
+                        </div>
                         <h3>Dual-Control Vehicles</h3>
-                        <p>Our entire training fleet is equipped with certified co-driver dual controls, allowing our instructors to intervene instantly for your absolute safety.</p>
+                        <p>Our entire training fleet is equipped with certified co-driver dual controls, allowing our instructors to intervene instantly with separate clutch and brake pedals for absolute security.</p>
+                        <div class="bento-card-list">
+                            <span><i class="fa-solid fa-car"></i> Hatchbacks, Sedans & SUVs Fitted</span>
+                            <span><i class="fa-solid fa-circle-check"></i> Certified RTO Standards Compliance</span>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table Section -->
+        <section class="comparison-section section bg-alt" id="comparison">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin: 0 auto 2rem auto;">
+                    <span class="section-tag" style="margin: 0 auto 0.75rem auto; display: table;">The Difference</span>
+                    <h2 class="section-title" style="text-align: center;">Bharat Driving School vs. Local Instructors</h2>
+                    <p class="section-subtitle" style="text-align: center; max-width: 600px; margin: 0 auto;">See why we are Pune's highest-rated driving academy. We offer a premium experience from booking to licensing.</p>
+                </div>
+
+                <div class="comparison-wrapper reveal">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th class="highlight">Bharat Motor Driving School</th>
+                                <th>Ordinary Local Schools</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="feature-name">Doorstep Pickup & Drop-off</td>
+                                <td class="value-yes highlight"><i class="fa-solid fa-circle-check"></i> Free doorstep service (Home/Office)</td>
+                                <td class="value-no"><i class="fa-solid fa-circle-xmark"></i> Ask you to meet at central locations</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Dual Control Fleet Safety</td>
+                                <td class="value-yes highlight"><i class="fa-solid fa-circle-check"></i> 100% Certified Dual-Control Vehicles</td>
+                                <td class="value-no"><i class="fa-solid fa-circle-xmark"></i> Single-control or unreliable home-made rigs</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Official RTO Licensing Help</td>
+                                <td class="value-yes highlight"><i class="fa-solid fa-circle-check"></i> Handled end-to-end by in-house agents</td>
+                                <td class="value-no"><i class="fa-solid fa-circle-xmark"></i> Students left to deal with brokers & paperwork</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Timings & Scheduling</td>
+                                <td class="value-yes highlight"><i class="fa-solid fa-circle-check"></i> Flexible slots (7 AM - 9 PM) + Weekends</td>
+                                <td class="value-no"><i class="fa-solid fa-circle-xmark"></i> Rigid timings matching instructor availability</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Pre-Training Simulators</td>
+                                <td class="value-yes highlight"><i class="fa-solid fa-circle-check"></i> Interactive simulators to practice controls</td>
+                                <td class="value-no"><i class="fa-solid fa-circle-xmark"></i> Direct traffic training (creates anxiety)</td>
+                            </tr>
+                            <tr>
+                                <td class="feature-name">Fee Transparency</td>
+                                <td class="value-yes highlight"><i class="fa-solid fa-circle-check"></i> All inclusive fixed price. Zero extra costs</td>
+                                <td class="value-no"><i class="fa-solid fa-circle-xmark"></i> Hidden fuel surcharges, test fees, slot fees</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -196,7 +258,7 @@
                 <div class="course-list-horizontal">
                     <div class="course-card-horizontal reveal">
                         <div class="course-img-area">
-                            <img src="assets/services/5.png" alt="Beginner Car Training">
+                            <img src="assets/services/img1.jpg" alt="Beginner Car Training">
                             <span class="course-img-badge">Best Seller</span>
                         </div>
                         <div class="course-info-area">
@@ -224,7 +286,7 @@
 
                     <div class="course-card-horizontal reveal">
                         <div class="course-img-area">
-                            <img src="assets/services/10.png" alt="Premium Sedan Course">
+                            <img src="assets/services/img2.jpg" alt="Premium Sedan Course">
                             <span class="course-img-badge">Best Value</span>
                         </div>
                         <div class="course-info-area">
@@ -252,7 +314,7 @@
 
                     <div class="course-card-horizontal reveal">
                         <div class="course-img-area">
-                            <img src="assets/services/8.png" alt="Two-Wheeler Classes">
+                            <img src="assets/services/img4.jpg" alt="Two-Wheeler Classes">
                             <span class="course-img-badge">Two Wheeler</span>
                         </div>
                         <div class="course-info-area">
@@ -279,8 +341,81 @@
                     </div>
                 </div>
 
-                <div style="text-align: center; margin-top: 4rem;">
+                <div style="text-align: center; margin-top: 3rem;">
                     <a href="courses.html" class="btn btn-dark">View All Packages <i class="fa-solid fa-list"></i></a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section" id="reviews">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin: 0 auto 2rem auto;">
+                    <span class="section-tag" style="margin: 0 auto 0.75rem auto; display: table;">Reviews</span>
+                    <h2 class="section-title" style="text-align: center;">Verified Customer Testimonials</h2>
+                    <p class="section-subtitle" style="text-align: center; max-width: 600px; margin: 0 auto;">Read how our safety-first, professional coaching helped Pune residents drive with confidence.</p>
+                </div>
+
+                <!-- Google Reviews Real-Time Widget Embed Slot -->
+                <!-- To load real-time Google Reviews, sign up for a free Elfsight or Tagembed account, generate your reviews widget, and paste the code block below. -->
+                <div class="google-reviews-widget-slot"></div>
+
+                <div class="testimonials-static-fallback">
+                    <div class="testimonials-summary reveal" style="display: flex; align-items: center; justify-content: center; gap: 2rem; margin-bottom: 2.5rem; background: var(--color-bg-light); padding: 1.25rem 1.5rem; border-radius: var(--border-radius-md); border: 1px solid var(--color-border); flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                            <span style="font-size: 3rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-primary); line-height: 1;">4.9</span>
+                            <div>
+                                <div class="google-stars" style="color: #FBBF24; font-size: 1.25rem;">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted);">Average Rating (2,450+ Reviews)</span>
+                            </div>
+                        </div>
+                        <div style="height: 40px; width: 1px; background: var(--color-border); display: block;" class="divider-hide"></div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary);">
+                            <i class="fa-brands fa-google" style="font-size: 1.5rem; color: #4285F4;"></i>
+                            <span>100% Verified Google Reviews</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-3">
+                        <div class="testimonial-card reveal">
+                            <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <p class="testimonial-text">"I was extremely scared of driving in Pune traffic. The instructor was incredibly patient, explaining clutch balancing rules repeatedly. Today, I passed my RTO hatchback driving test on the first attempt! Doorstep pickup was super convenient."</p>
+                            <div class="testimonial-user">
+                                <div class="user-avatar" style="background-color: #3B82F6;">S</div>
+                                <div class="user-meta">
+                                    <h4>Sneha Kulkarni</h4>
+                                    <span>Completed Hatchback Package • Katraj</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card reveal">
+                            <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <p class="testimonial-text">"Excellent premium sedan training fleet. I booked the Sedan Package to master parallel parking. The simulator practice before getting on the road made a massive difference. End-to-end RTO licensing support was handled entirely by their desk."</p>
+                            <div class="testimonial-user">
+                                <div class="user-avatar" style="background-color: #10B981;">A</div>
+                                <div class="user-meta">
+                                    <h4>Amit Paranjpe</h4>
+                                    <span>Completed Sedan Package • Dhankwadi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card reveal">
+                            <div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <p class="testimonial-text">"Dual control safety gave me immense peace of mind. Highly recommend the Combo package. Timings were completely flexible, allowing me to shift slots between morning and evening shifts easily. Invaluable coaching."</p>
+                            <div class="testimonial-user">
+                                <div class="user-avatar" style="background-color: #F59E0B;">R</div>
+                                <div class="user-meta">
+                                    <h4>Rahul Deshmukh</h4>
+                                    <span>Completed Combo Package • Dhayari</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -598,10 +733,9 @@
             <div class="footer-brand">
                 <img src="assets/images/logo.png" alt="BMDS" class="footer-logo">
                 <h3>Bharat Motor Driving School</h3>
-                <p>Empowering drivers with premium coaching, defensive training, and comprehensive licensing services
-                    since 2013.</p>
+                <p>Empowering drivers with premium coaching, defensive training, and comprehensive licensing services since 2013.</p>
                 <div class="footer-socials">
-                    <a href="https://wa.me/919922211238" class="footer-social"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/919922211238" class="footer-social" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -622,17 +756,29 @@
                     <li><a href="courses.html">SUV Training</a></li>
                     <li><a href="courses.html">Two-Wheeler Classes</a></li>
                     <li><a href="index.html#services">RTO Guidance</a></li>
-                    <li><a href="index.html#services">License Renewal</a></li>
+                    <li><a href="https://sarathi.parivahan.gov.in" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem; margin-right: 4px;"></i> Sarathi RTO Portal</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container footer-bottom-wrapper">
                 <p>&copy; 2026 Bharat Motor Driving School. All Rights Reserved.</p>
-                <p>Designed with Professional Code standards.</p>
+                <div class="footer-payment-badges" style="display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; color: rgba(255, 255, 255, 0.35);">
+                    <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.25rem;">100% Secured Payment via:</span>
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+                    <i class="fa-solid fa-qrcode" title="UPI Apps"></i>
+                    <span style="font-size: 0.85rem; font-weight: 800; color: rgba(255, 255, 255, 0.5);">UPI</span>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Floating Support Bubble -->
+    <a href="https://wa.me/919922211238?text=Hello,%20I%20want%20to%20inquire%20about%20your%20driving%20school%20courses." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with a Counselor on WhatsApp">
+        <div class="whatsapp-tooltip">Chat with a Counselor</div>
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- Enrollment Modal -->
     <div class="modal-overlay" id="bookingModalOverlay">

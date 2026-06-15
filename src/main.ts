@@ -35,6 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Re-initialize reveals (IntersectionObserver)
         initScrollAnimations();
 
+        // Bind page-content triggers globally if present
+        const aboutEnrollTrigger = document.getElementById('aboutEnrollTrigger');
+        if (aboutEnrollTrigger) {
+            aboutEnrollTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                bookingModal.open();
+            });
+        }
+
         if (path.includes('courses.html')) {
             // Courses Catalog Page
             initCoursesSection((courseId) => {
@@ -52,12 +61,53 @@ document.addEventListener('DOMContentLoaded', () => {
             // Gallery Page
             initGalleryTabs();
         } else if (path.includes('about.html')) {
-            // About Us Page (no special scripts needed beyond scroll animations)
+            // About Us Page (scroll animations handled globally)
         } else {
             // Home Page (or root "/")
             initFaqAccordion();
             initStatsCounter();
             initRtoConsole();
+
+            // Auto-detect Real-Time Google Reviews Widget & hide fallback reviews
+            const widgetSlot = document.querySelector('.google-reviews-widget-slot');
+            const fallbackGrid = document.querySelector('.testimonials-static-fallback') as HTMLElement;
+            if (widgetSlot && fallbackGrid) {
+                if (widgetSlot.children.length > 0) {
+                    fallbackGrid.style.display = 'none';
+                } else {
+                    const observer = new MutationObserver(() => {
+                        if (widgetSlot.children.length > 0) {
+                            fallbackGrid.style.display = 'none';
+                            observer.disconnect();
+                        }
+                    });
+                    observer.observe(widgetSlot, { childList: true, subtree: true });
+                }
+            }
+
+            // Bind Home Page "Book Course" buttons directly to modal
+            const bookBasic = document.getElementById('book-car-basic');
+            if (bookBasic) {
+                bookBasic.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    bookingModal.open('car-basic');
+                });
+            }
+            const bookSedan = document.getElementById('book-car-sedan');
+            if (bookSedan) {
+                bookSedan.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    bookingModal.open('car-sedan');
+                });
+            }
+            const bookBike = document.getElementById('book-two-wheeler');
+            if (bookBike) {
+                bookBike.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    bookingModal.open('two-wheeler');
+                });
+            }
+
 
             // Quick Contact Counselor Form Submission
             const contactForm = document.getElementById('directContactForm') as HTMLFormElement;

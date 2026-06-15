@@ -21,33 +21,24 @@
 
 <body>
 
-    <!-- Topbar Info -->
-    <div class="topbar">
-        <div class="container topbar-wrapper">
-            <div class="topbar-left">
-                <span class="topbar-item"><i class="fa-solid fa-location-dot"></i> Katraj • Dhankwadi • Dhayari,
-                    Pune</span>
-                <span class="topbar-item"><i class="fa-solid fa-phone"></i> <a
-                        href="tel:+919011051238">9011051238</a></span>
-            </div>
-            <div class="topbar-right">
-                <a href="https://wa.me/919922211238" target="_blank" class="topbar-social"><i
-                        class="fab fa-whatsapp"></i></a>
-                <span class="topbar-badge"><i class="fa-solid fa-clock"></i> Mon - Sun: 7 AM - 9 PM</span>
-            </div>
-        </div>
-    </div>
-
     <!-- Header Navigation -->
     <header class="header">
         <div class="container header-wrapper">
-            <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="BMDS Logo" class="logo-img">
-                <div class="logo-text">
-                    <span class="logo-title">BHARAT</span>
-                    <span class="logo-subtitle">Driving School</span>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="BMDS Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-title">BHARAT</span>
+                        <span class="logo-subtitle">Driving School</span>
+                    </div>
+                </a>
+                <div class="header-trust-badge">
+                    <div class="google-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <span>4.9 ★ (2,450+ Google Reviews)</span>
                 </div>
-            </a>
+            </div>
 
             <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
                 <span class="bar"></span><span class="bar"></span><span class="bar"></span>
@@ -68,10 +59,13 @@
 
     <main id="page-content">
         <!-- Subpage Hero Banner -->
-        <section class="subpage-hero">
+        <section class="subpage-hero" style="background: var(--color-white); padding: 3rem 0 1.5rem 0; border-bottom: none;">
             <div class="container">
-                <div class="subpage-hero-content">
-                    <h1 class="subpage-title">Gallery</h1>
+                <div class="subpage-hero-content" style="max-width: 100%;">
+                    <h1 class="subpage-title" style="color: var(--color-text-dark); position: relative; display: inline-block; padding-bottom: 0.75rem; font-size: 2.5rem; font-weight: 800;">
+                        Gallery
+                        <span style="position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background-color: var(--color-accent); border-radius: 2px;"></span>
+                    </h1>
                 </div>
             </div>
         </section>
@@ -130,10 +124,9 @@
             <div class="footer-brand">
                 <img src="assets/images/logo.png" alt="BMDS" class="footer-logo">
                 <h3>Bharat Motor Driving School</h3>
-                <p>Empowering drivers with premium coaching, defensive training, and comprehensive licensing services
-                    since 2013.</p>
+                <p>Empowering drivers with premium coaching, defensive training, and comprehensive licensing services since 2013.</p>
                 <div class="footer-socials">
-                    <a href="https://wa.me/919922211238" class="footer-social"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/919922211238" class="footer-social" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-links">
@@ -154,17 +147,29 @@
                     <li><a href="courses.html">SUV Training</a></li>
                     <li><a href="courses.html">Two-Wheeler Classes</a></li>
                     <li><a href="index.html#services">RTO Guidance</a></li>
-                    <li><a href="index.html#services">License Renewal</a></li>
+                    <li><a href="https://sarathi.parivahan.gov.in" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem; margin-right: 4px;"></i> Sarathi RTO Portal</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container footer-bottom-wrapper">
                 <p>&copy; 2026 Bharat Motor Driving School. All Rights Reserved.</p>
-                <p>Designed with Professional Code standards.</p>
+                <div class="footer-payment-badges" style="display: flex; align-items: center; gap: 0.75rem; font-size: 1.25rem; color: rgba(255, 255, 255, 0.35);">
+                    <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.25rem;">100% Secured Payment via:</span>
+                    <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+                    <i class="fa-solid fa-qrcode" title="UPI Apps"></i>
+                    <span style="font-size: 0.85rem; font-weight: 800; color: rgba(255, 255, 255, 0.5);">UPI</span>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Floating Support Bubble -->
+    <a href="https://wa.me/919922211238?text=Hello,%20I%20want%20to%20inquire%20about%20your%20driving%20school%20courses." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with a Counselor on WhatsApp">
+        <div class="whatsapp-tooltip">Chat with a Counselor</div>
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- Enrollment Modal -->
     <div class="modal-overlay" id="bookingModalOverlay">
