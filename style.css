@@ -2522,13 +2522,13 @@ textarea {
 }
 
 .bento-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(251, 211, 1, 0.45);
-    border-color: rgba(251, 211, 1, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -10px rgba(15, 23, 42, 0.1);
+    border-color: rgba(15, 23, 42, 0.1);
 }
 
 .bento-card:hover::before {
-    opacity: 1;
+    opacity: 0;
 }
 
 .bento-card.wide-story,
@@ -2551,8 +2551,8 @@ textarea {
 }
 
 .bento-card:hover .bento-watermark {
-    transform: scale(1.18) rotate(6deg);
-    color: rgba(251, 211, 1, 0.04);
+    transform: rotate(-12deg) scale(1);
+    color: rgba(15, 23, 42, 0.02);
 }
 
 /* Standard watermark inherits */
@@ -2693,11 +2693,11 @@ textarea {
 }
 
 .bento-card:hover .bento-card-icon {
-    background-color: var(--color-primary);
-    color: var(--color-accent);
-    border-color: var(--color-primary);
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 20px -6px rgba(15, 23, 42, 0.3);
+    background-color: var(--color-bg-light);
+    color: var(--color-primary);
+    border-color: rgba(15, 23, 42, 0.06);
+    transform: none;
+    box-shadow: var(--shadow-sm);
 }
 
 /* Standard icon inherits */
