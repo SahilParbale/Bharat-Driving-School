@@ -109,7 +109,7 @@ export function initBranchesSection(): void {
     selectorCards.forEach(card => {
         card.addEventListener('click', (e) => {
             const target = e.currentTarget as HTMLElement;
-            
+
             // Check if user clicked a link (phone support) inside card
             const clickedLink = (e.target as HTMLElement).closest('a');
             if (clickedLink) return; // Allow natural anchor link clicking
