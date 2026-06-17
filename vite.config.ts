@@ -14,7 +14,8 @@ export default defineConfig({
         courses: resolve(__dirname, 'courses.html'),
         calculator: resolve(__dirname, 'calculator.html'),
         branches: resolve(__dirname, 'branches.html'),
-        gallery: resolve(__dirname, 'gallery.html')
+        gallery: resolve(__dirname, 'gallery.html'),
+        enroll: resolve(__dirname, 'enroll.html')
       }
     }
   }
