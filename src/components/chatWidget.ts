@@ -1,3 +1,5 @@
+import { showToast } from '../utils/toast';
+
 export function initChatWidget(): void {
     // 1. Remove the old static WhatsApp float links if they exist on the page
     const oldFloats = document.querySelectorAll('.whatsapp-float');
@@ -149,7 +151,7 @@ export function initChatWidget(): void {
         // Phone Validation (Indian 10-Digit Mobile Numbers starting with 6-9)
         const phoneRegex = /^[6-9]\d{9}$/;
         if (!phoneRegex.test(phone)) {
-            alert('Please enter a valid 10-digit mobile number.');
+            showToast('Please enter a valid 10-digit mobile number.', 'error');
             return;
         }
 
@@ -166,9 +168,6 @@ _Sent via Driving School Chat Widget._`;
         const whatsappNumber = '919922211238'; // Firm's primary contact number
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-        // Open in new tab
-        window.open(whatsappUrl, '_blank');
-
         // Reset widget state
         form.reset();
         optionButtons.forEach(b => b.classList.remove('selected'));
@@ -176,5 +175,11 @@ _Sent via Driving School Chat Widget._`;
         popup.classList.remove('open');
         toggleIcon.style.display = 'block';
         closeIcon.style.display = 'none';
+
+        // Redirect user
+        showToast('Connecting you with a coordinator on WhatsApp...', 'success');
+        setTimeout(() => {
+            window.location.href = whatsappUrl;
+        }, 1500);
     });
 }

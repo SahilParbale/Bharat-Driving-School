@@ -1,7 +1,7 @@
 export interface Course {
     id: string;
     title: string;
-    category: 'car' | 'bike' | 'combo';
+    category: 'car' | 'bike' | 'combo' | 'license';
     price: number;
     duration: string;
     sessions: string;
@@ -63,6 +63,21 @@ export const COURSES_DATA: Course[] = [
         badge: 'Premium'
     },
     {
+        id: 'car-own',
+        title: 'Own Vehicle Training',
+        category: 'car',
+        price: 2500,
+        duration: '15 Days',
+        sessions: '15 Live Sessions',
+        features: [
+            'Train in Your Own Car',
+            'Instructor Support & Tips',
+            'Flexible Booking Times',
+            'Confidence on Heavy Traffic Roads'
+        ],
+        image: 'assets/services/img1.jpg'
+    },
+    {
         id: 'two-wheeler',
         title: 'Two-Wheeler Driving (Bike/Scooter)',
         category: 'bike',
@@ -77,6 +92,20 @@ export const COURSES_DATA: Course[] = [
             'Personal training track'
         ],
         image: 'assets/services/img4.jpg'
+    },
+    {
+        id: 'rto-package',
+        title: 'RTO Assistance Package',
+        category: 'license',
+        price: 1500,
+        duration: '1 Day',
+        sessions: 'RTO Support',
+        features: [
+            'Official RTO Documentation Help',
+            'Online Application Form Filling',
+            'Learning License Slot Booking Assistance'
+        ],
+        image: 'assets/services/img2.jpg'
     },
     {
         id: 'combo-master',
@@ -94,6 +123,21 @@ export const COURSES_DATA: Course[] = [
         ],
         image: 'assets/services/img5.jpg',
         badge: 'Super Saver'
+    },
+    {
+        id: 'premium-fast',
+        title: 'Premium Fast Track',
+        category: 'combo',
+        price: 5999,
+        duration: '15 Days',
+        sessions: '15 Express Batches',
+        features: [
+            'License & Passing in 15 Days',
+            'Priority Time Slot Scheduling',
+            'Comprehensive Personal Coordinator'
+        ],
+        image: 'assets/services/img3.jpg',
+        badge: 'Fast Track'
     }
 ];
 

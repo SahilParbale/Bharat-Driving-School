@@ -5,7 +5,8 @@ import {
     initGalleryTabs,
     initFaqAccordion,
     initStatsCounter,
-    initRtoConsole
+    initRtoConsole,
+    initTestimonialSlider
 } from './utils/animations';
 import { initCoursesSection } from './components/courses';
 import { initFeeCalculator } from './components/feeCalculator';
@@ -13,6 +14,7 @@ import { initBranchesSection } from './components/branches';
 import { initEnrollPage } from './components/enroll';
 import { initChatWidget } from './components/chatWidget';
 import { Router } from './utils/router';
+import { showToast } from './utils/toast';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize interactive floating chat widget
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             initFaqAccordion();
             initStatsCounter();
             initRtoConsole();
+            initTestimonialSlider();
 
             // Auto-detect Real-Time Google Reviews Widget & hide fallback reviews
             const widgetSlot = document.querySelector('.google-reviews-widget-slot');
@@ -111,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const phoneRegex = /^[6-9]\d{9}$/;
                     if (!phoneRegex.test(phoneVal)) {
-                        alert('Please enter a valid 10-digit mobile number.');
+                        showToast('Please enter a valid 10-digit mobile number.', 'error');
                         return;
                     }
 
@@ -128,9 +131,11 @@ _Sent from Driving School Web Platform._`;
                     const whatsappNumber = '919011051238'; // Direct firm WhatsApp number
                     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encoded}`;
 
-                    window.open(whatsappUrl, '_blank');
-                    alert('Your inquiry was processed. Redirecting to WhatsApp to chat with our coordinator.');
                     contactForm.reset();
+                    showToast('Your inquiry was processed. Redirecting to WhatsApp to chat with our coordinator...', 'success');
+                    setTimeout(() => {
+                        window.location.href = whatsappUrl;
+                    }, 1500);
                 });
             }
         }

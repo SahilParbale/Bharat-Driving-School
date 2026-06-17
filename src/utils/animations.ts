@@ -225,3 +225,150 @@ export function initRtoConsole(): void {
         });
     });
 }
+
+export function initTestimonialSlider(): void {
+    const wrapper = document.querySelector('.testimonials-slider-wrapper');
+    const container = document.getElementById('testimonialsSliderContainer');
+    const track = document.getElementById('testimonialsSliderTrack');
+    const prevBtn = document.getElementById('reviewsPrevBtn');
+    const nextBtn = document.getElementById('reviewsNextBtn');
+    const dotsContainer = document.getElementById('reviewsSliderDots');
+
+    if (!wrapper || !container || !track) return;
+
+    const cards = track.querySelectorAll('.testimonial-card');
+    const totalCards = cards.length;
+    if (totalCards === 0) return;
+
+    let currentIndex = 0;
+    let autoScrollInterval: ReturnType<typeof setInterval> | null = null;
+
+    const getVisibleCount = (): number => {
+        const width = window.innerWidth;
+        if (width > 900) return 3;
+        if (width > 600) return 2;
+        return 1;
+    };
+
+    const getMaxIndex = (): number => {
+        const visible = getVisibleCount();
+        return Math.max(0, totalCards - visible);
+    };
+
+    const updateSlider = (): void => {
+        const visible = getVisibleCount();
+        const maxIdx = getMaxIndex();
+
+        if (currentIndex > maxIdx) {
+            currentIndex = maxIdx;
+        }
+        if (currentIndex < 0) {
+            currentIndex = 0;
+        }
+
+        // Slide using exact CSS calc calculation (1.5rem is the track gap)
+        track.style.transform = `translateX(calc(-${currentIndex} * (100% + 1.5rem) / ${visible}))`;
+
+        // Update Dots active state
+        const dots = dotsContainer?.querySelectorAll('.slider-dot');
+        if (dots) {
+            dots.forEach((dot, idx) => {
+                if (idx === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+    };
+
+    const createDots = (): void => {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+
+        const maxIdx = getMaxIndex();
+
+        for (let i = 0; i <= maxIdx; i++) {
+            const dot = document.createElement('button');
+            dot.className = `slider-dot ${i === currentIndex ? 'active' : ''}`;
+            dot.setAttribute('aria-label', `Go to review slide ${i + 1}`);
+            dot.addEventListener('click', () => {
+                currentIndex = i;
+                updateSlider();
+                resetAutoScroll();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    };
+
+    const nextSlide = (): void => {
+        const maxIdx = getMaxIndex();
+        if (currentIndex >= maxIdx) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
+        updateSlider();
+    };
+
+    const prevSlide = (): void => {
+        const maxIdx = getMaxIndex();
+        if (currentIndex <= 0) {
+            currentIndex = maxIdx;
+        } else {
+            currentIndex--;
+        }
+        updateSlider();
+    };
+
+    const startAutoScroll = (): void => {
+        if (autoScrollInterval) return;
+        autoScrollInterval = setInterval(nextSlide, 4000);
+    };
+
+    const stopAutoScroll = (): void => {
+        if (autoScrollInterval) {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = null;
+        }
+    };
+
+    const resetAutoScroll = (): void => {
+        stopAutoScroll();
+        startAutoScroll();
+    };
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoScroll();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoScroll();
+        });
+    }
+
+    // Pause on hover
+    wrapper.addEventListener('mouseenter', stopAutoScroll);
+    wrapper.addEventListener('mouseleave', startAutoScroll);
+
+    // Re-initialize dots and positions on viewport resizing
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            createDots();
+            updateSlider();
+        }, 150);
+    });
+
+    // Initialize
+    createDots();
+    updateSlider();
+    startAutoScroll();
+}
+

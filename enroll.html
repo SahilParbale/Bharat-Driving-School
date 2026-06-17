@@ -124,8 +124,8 @@
         <!-- Progress Stepper -->
         <div class="enroll-stepper-wrapper">
             <div class="container">
-                <div class="enroll-stepper">
-                    <div class="step-item active">
+                <div class="enroll-stepper" id="enrollStepper">
+                    <div class="step-item active" data-step="1">
                         <div class="step-circle">1</div>
                         <div class="step-content">
                             <div class="step-icon"><i class="fa-solid fa-graduation-cap"></i></div>
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                     <div class="step-divider"></div>
-                    <div class="step-item">
+                    <div class="step-item" data-step="2">
                         <div class="step-circle">2</div>
                         <div class="step-content">
                             <div class="step-icon"><i class="fa-regular fa-calendar-check"></i></div>
@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     <div class="step-divider"></div>
-                    <div class="step-item">
+                    <div class="step-item" data-step="3">
                         <div class="step-circle">3</div>
                         <div class="step-content">
                             <div class="step-icon"><i class="fa-regular fa-user"></i></div>
@@ -158,7 +158,7 @@
                         </div>
                     </div>
                     <div class="step-divider"></div>
-                    <div class="step-item">
+                    <div class="step-item" data-step="4">
                         <div class="step-circle">4</div>
                         <div class="step-content">
                             <div class="step-text" style="margin-left: 0;">
@@ -180,85 +180,27 @@
                     <div class="enroll-form-col">
                         
                         <!-- Step 1: Course -->
-                        <div class="enroll-step-card">
+                        <div class="enroll-step-card" id="stepCard1">
                             <h2 class="step-title"><span class="step-num">1</span> Choose Your Training</h2>
                             
-                            <div class="course-tabs">
-                                <button type="button" class="course-tab active"><i class="fa-solid fa-car-side"></i> Car Training</button>
-                                <button type="button" class="course-tab"><i class="fa-solid fa-motorcycle"></i> Two-Wheeler</button>
-                                <button type="button" class="course-tab"><i class="fa-regular fa-id-card"></i> License Services</button>
-                                <button type="button" class="course-tab"><i class="fa-solid fa-star" style="color:var(--color-accent)"></i> Premium Programs</button>
+                            <div class="course-tabs" id="courseTabs">
+                                <button type="button" class="course-tab active" data-category="car"><i class="fa-solid fa-car-side"></i> Car Training</button>
+                                <button type="button" class="course-tab" data-category="bike"><i class="fa-solid fa-motorcycle"></i> Two-Wheeler</button>
+                                <button type="button" class="course-tab" data-category="license"><i class="fa-regular fa-id-card"></i> License Services</button>
+                                <button type="button" class="course-tab" data-category="combo"><i class="fa-solid fa-star" style="color:var(--color-accent)"></i> Premium Programs</button>
                             </div>
 
                             <div class="course-cards-scroller-wrapper">
-                                <div class="course-cards-scroller">
-                                    <label class="course-select-card active">
-                                        <div class="most-popular-badge">MOST POPULAR <i class="fa-solid fa-star"></i></div>
-                                        <input type="radio" name="enrollCourse" value="beginner_car" checked>
-                                        <div class="csc-icon"><i class="fa-solid fa-car"></i></div>
-                                        <h3>Beginner Car Training</h3>
-                                        <div class="csc-price">₹3,500</div>
-                                        <ul class="csc-features">
-                                            <li><i class="fa-regular fa-circle-check"></i> 15 Training Days</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> Dual Control Car</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> RTO Assistance</li>
-                                        </ul>
-                                    </label>
-                                    
-                                    <label class="course-select-card">
-                                        <input type="radio" name="enrollCourse" value="advanced_car">
-                                        <div class="csc-icon"><i class="fa-solid fa-car-rear"></i></div>
-                                        <h3>Advanced Car Training</h3>
-                                        <div class="csc-price">₹4,500</div>
-                                        <ul class="csc-features">
-                                            <li><i class="fa-regular fa-circle-check"></i> Parking & Traffic</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> Experienced Drivers</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> Certificate Included</li>
-                                        </ul>
-                                    </label>
-
-                                    <label class="course-select-card">
-                                        <input type="radio" name="enrollCourse" value="own_car">
-                                        <div class="csc-icon"><i class="fa-solid fa-car-side"></i></div>
-                                        <h3>Own Vehicle Training</h3>
-                                        <div class="csc-price">₹2,500</div>
-                                        <ul class="csc-features">
-                                            <li><i class="fa-regular fa-circle-check"></i> Train in Your Car</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> Instructor Support</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> Flexible Schedule</li>
-                                        </ul>
-                                    </label>
-                                    
-                                    <label class="course-select-card">
-                                        <input type="radio" name="enrollCourse" value="rto_package">
-                                        <div class="csc-icon"><i class="fa-regular fa-file-lines"></i></div>
-                                        <h3>RTO Assistance Package</h3>
-                                        <div class="csc-price">₹1,500</div>
-                                        <ul class="csc-features">
-                                            <li><i class="fa-regular fa-circle-check"></i> Documentation</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> Form Filling Help</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> RTO Guidance</li>
-                                        </ul>
-                                    </label>
-
-                                    <label class="course-select-card">
-                                        <input type="radio" name="enrollCourse" value="premium_fast">
-                                        <div class="csc-icon"><i class="fa-solid fa-bolt"></i></div>
-                                        <h3>Premium Fast Track</h3>
-                                        <div class="csc-price">₹5,999</div>
-                                        <ul class="csc-features">
-                                            <li><i class="fa-regular fa-circle-check"></i> License in 15 Days</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> Priority Batches</li>
-                                            <li><i class="fa-regular fa-circle-check"></i> Full Support</li>
-                                        </ul>
-                                    </label>
+                                <button class="scroller-btn prev-btn" id="courseScrollerPrev" type="button" style="left: 0; display: none;"><i class="fa-solid fa-arrow-left"></i></button>
+                                <div class="course-cards-scroller" id="courseScroller">
+                                    <!-- Dynamic Course Cards will be rendered here -->
                                 </div>
-                                <button class="scroller-btn next-btn" type="button"><i class="fa-solid fa-arrow-right"></i></button>
+                                <button class="scroller-btn next-btn" id="courseScrollerNext" type="button"><i class="fa-solid fa-arrow-right"></i></button>
                             </div>
                         </div>
 
                         <!-- Step 2: Schedule -->
-                        <div class="enroll-step-card">
+                        <div class="enroll-step-card" id="stepCard2">
                             <h2 class="step-title"><span class="step-num">2</span> Select Branch, Date & Time</h2>
                             
                             <div class="schedule-grid">
@@ -267,9 +209,9 @@
                                     <label class="input-label">Select Branch</label>
                                     <div class="branch-search">
                                         <i class="fa-solid fa-magnifying-glass"></i>
-                                        <input type="text" placeholder="Search branch...">
+                                        <input type="text" id="branchSearchInput" placeholder="Search branch...">
                                     </div>
-                                    <div class="branch-list">
+                                    <div class="branch-list" id="branchList">
                                         <label class="branch-radio active">
                                             <input type="radio" name="enrollBranch" value="dhankwadi" checked>
                                             <div class="br-content">
@@ -304,22 +246,18 @@
                                     <label class="input-label">Select Start Date</label>
                                     <div class="custom-calendar">
                                         <div class="cal-header">
-                                            <button type="button"><i class="fa-solid fa-chevron-left"></i></button>
-                                            <strong>June 2026</strong>
-                                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                                            <button type="button" id="calPrevMonth" aria-label="Previous Month"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <strong id="calMonthYear">June 2026</strong>
+                                            <button type="button" id="calNextMonth" aria-label="Next Month"><i class="fa-solid fa-chevron-right"></i></button>
                                         </div>
                                         <div class="cal-days-header">
                                             <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
                                         </div>
-                                        <div class="cal-grid">
-                                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-                                            <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
-                                            <span>15</span><span>16</span><span>17</span><span class="active">18</span><span>19</span><span>20</span><span>21</span>
-                                            <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
-                                            <span>29</span><span>30</span>
+                                        <div class="cal-grid" id="calDaysGrid">
+                                            <!-- Dynamically generated days -->
                                         </div>
                                         <div class="cal-footer">Available dates are highlighted</div>
-                                        <input type="hidden" id="enrollStartDate" value="2026-06-18">
+                                        <input type="hidden" id="enrollStartDate" value="">
                                     </div>
                                 </div>
 
@@ -372,24 +310,24 @@
                                         <label class="pu-radio"><input type="radio" name="pickupReq" value="no"> No, I will come to branch</label>
                                     </div>
                                 </div>
-                                <div class="pickup-col">
+                                <div class="pickup-col" id="pickupAddressGroup">
                                     <label class="input-label">Pickup Address</label>
                                     <div class="input-with-icon align-top">
                                         <i class="fa-solid fa-location-dot"></i>
-                                        <textarea rows="2" placeholder="Enter your complete address for pickup" class="pu-textarea">Katraj, Dhankwadi, Dhayari, Pune</textarea>
+                                        <textarea id="enrollAddress" rows="2" placeholder="Enter your complete address for pickup" class="pu-textarea">Katraj, Dhankwadi, Dhayari, Pune</textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Step 3: Details -->
-                        <div class="enroll-step-card">
+                        <div class="enroll-step-card" id="stepCard3">
                             <h2 class="step-title"><span class="step-num">3</span> Your Details</h2>
                             
                             <div class="details-grid">
                                 <div class="detail-group">
                                     <label class="input-label">Full Name <span class="req">*</span></label>
-                                    <input type="text" placeholder="Enter your full name" required class="detail-input">
+                                    <input type="text" id="enrollName" placeholder="Enter your full name" required class="detail-input">
                                 </div>
                                 <div class="detail-group">
                                     <label class="input-label">Do you have Learner's License?</label>
@@ -402,27 +340,27 @@
                                     <label class="input-label">Mobile Number <span class="req">*</span></label>
                                     <div class="phone-input">
                                         <div class="phone-prefix"><i class="fa-solid fa-phone"></i> +91 <i class="fa-solid fa-caret-down"></i></div>
-                                        <input type="tel" placeholder="Enter 10-digit mobile number" required>
+                                        <input type="tel" id="enrollPhone" placeholder="Enter 10-digit mobile number" required>
                                     </div>
                                 </div>
-                                <div class="detail-group">
+                                <div class="detail-group" id="llNumberGroup">
                                     <label class="input-label">Learner's License Number</label>
-                                    <input type="text" placeholder="Enter LL number (if available)" class="detail-input">
+                                    <input type="text" id="enrollLLNumber" placeholder="Enter LL number (if available)" class="detail-input">
                                 </div>
                                 <div class="detail-group">
                                     <label class="input-label">WhatsApp Number (Optional)</label>
                                     <div class="phone-input">
                                         <div class="phone-prefix"><i class="fa-brands fa-whatsapp"></i> +91 <i class="fa-solid fa-caret-down"></i></div>
-                                        <input type="tel" placeholder="Enter WhatsApp number">
+                                        <input type="tel" id="enrollWhatsApp" placeholder="Enter WhatsApp number">
                                     </div>
                                 </div>
                                 <div class="detail-group" style="grid-row: span 2;">
                                     <label class="input-label">Special Requirements (Optional)</label>
-                                    <textarea rows="4" placeholder="Any special requirements or preferences?&#10;&#10;E.g. Female instructor, Weekend classes, etc." class="detail-input"></textarea>
+                                    <textarea id="enrollSpecialReqs" rows="4" placeholder="Any special requirements or preferences?&#10;&#10;E.g. Female instructor, Weekend classes, etc." class="detail-input"></textarea>
                                 </div>
                                 <div class="detail-group">
                                     <label class="input-label">Email Address (Optional)</label>
-                                    <input type="email" placeholder="Enter email address" class="detail-input">
+                                    <input type="email" id="enrollEmail" placeholder="Enter email address" class="detail-input">
                                 </div>
                             </div>
                         </div>
