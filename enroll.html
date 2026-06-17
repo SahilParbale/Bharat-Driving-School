@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
 
 <head>
     <meta charset="UTF-8">
@@ -56,176 +56,463 @@
         </div>
     </header>
 
-    <main id="page-content" style="background-color: var(--color-bg-light); padding-bottom: 4rem;">
-        <!-- Subpage Hero Banner -->
-        <section class="subpage-hero" style="background: var(--color-white); padding: 3rem 0 1.5rem 0; border-bottom: 1px solid var(--color-border);">
-            <div class="container">
-                <div class="subpage-hero-content" style="max-width: 100%;">
-                    <h1 class="subpage-title" style="color: var(--color-text-dark); position: relative; display: inline-block; padding-bottom: 0.75rem; font-weight: 800;">
-                        Secure Your Spot
-                        <span style="position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; background-color: var(--color-accent); border-radius: 2px;"></span>
+    <main id="page-content" style="background-color: var(--color-bg-light); padding-bottom: 0;">
+        <!-- Dark Premium Hero Section -->
+        <section class="enroll-hero-dark">
+            <div class="enroll-hero-bg"></div>
+            <div class="enroll-hero-overlay"></div>
+            <div class="container enroll-hero-container">
+                <div class="enroll-hero-content">
+                    <div class="enroll-badge">ENROLLMENT</div>
+                    <h1 class="enroll-hero-title">
+                        Reserve Your<br>
+                        <span class="text-accent">Driving Journey</span>
                     </h1>
-                    <p style="color: var(--color-text-muted); margin-top: 1rem; font-size: 1.05rem;">
-                        Complete your enrollment in under 2 minutes. We'll verify your details and connect with you on WhatsApp to finalize your training schedule.
+                    <p class="enroll-hero-desc">
+                        Professional training. Trusted by thousands.<br>
+                        Get your license in just 15 days.
                     </p>
+                    <div class="enroll-hero-features">
+                        <div class="eh-feature">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>15-Day<br>Fast Track</span>
+                        </div>
+                        <div class="eh-feature">
+                            <i class="fa-solid fa-car-side"></i>
+                            <span>Dual-Control<br>Vehicles</span>
+                        </div>
+                        <div class="eh-feature">
+                            <i class="fa-solid fa-house-chimney"></i>
+                            <span>Doorstep<br>Pickup</span>
+                        </div>
+                        <div class="eh-feature">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>RTO License<br>Assistance</span>
+                        </div>
+                    </div>
+                    <div class="enroll-hero-timer">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Complete booking in under 60 seconds</span>
+                    </div>
+                </div>
+                <div class="enroll-hero-metrics">
+                    <div class="eh-metric-card">
+                        <div class="ehm-icon"><i class="fa-regular fa-star"></i></div>
+                        <div class="ehm-text">
+                            <strong>4.9 Rating</strong>
+                            <span>2,450+ Reviews</span>
+                        </div>
+                    </div>
+                    <div class="eh-metric-card">
+                        <div class="ehm-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="ehm-text">
+                            <strong>13+ Years</strong>
+                            <span>of Experience</span>
+                        </div>
+                    </div>
+                    <div class="eh-metric-card">
+                        <div class="ehm-icon"><i class="fa-solid fa-users"></i></div>
+                        <div class="ehm-text">
+                            <strong>25,000+</strong>
+                            <span>Students Trained</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Enrollment Form Section -->
-        <section class="enroll-section" style="padding-top: 3rem;">
-            <div class="container" style="max-width: 1100px; margin: 0 auto;">
-                <form id="enrollmentForm" class="enroll-form-col">
-                    <div class="enroll-master-card" style="padding: 3rem;">
-                        
-                        <div class="form-sections-grid">
-                            <!-- Section 1 -->
-                            <div class="form-section">
-                                <h3 class="form-section-title"><i class="fa-solid fa-graduation-cap"></i> 1. Course Selection</h3>
-                                <div class="enhanced-input-group">
-                                    <label for="enrollCourseSelect">Driving Package</label>
-                                    <div class="input-with-icon">
-                                        <i class="fa-solid fa-car-side"></i>
-                                        <select id="enrollCourseSelect" required class="enhanced-control"></select>
-                                    </div>
-                                </div>
-                                <div class="enhanced-input-group">
-                                    <label for="enrollBranchSelect">Training Branch</label>
-                                    <div class="input-with-icon">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                        <select id="enrollBranchSelect" required class="enhanced-control">
-                                            <option value="dhankwadi">Shri Bharat MDS (Dhankwadi)</option>
-                                            <option value="dhayari">New Bharat MDS (Dhayari)</option>
-                                        </select>
-                                    </div>
-                                </div>
+        <!-- Progress Stepper -->
+        <div class="enroll-stepper-wrapper">
+            <div class="container">
+                <div class="enroll-stepper">
+                    <div class="step-item active">
+                        <div class="step-circle">1</div>
+                        <div class="step-content">
+                            <div class="step-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="step-text">
+                                <strong>Course</strong>
+                                <span>Choose Training</span>
                             </div>
-                            
-                            <!-- Section 2 -->
-                            <div class="form-section">
-                                <h3 class="form-section-title"><i class="fa-regular fa-calendar-check"></i> 2. Scheduling</h3>
-                                <div class="enhanced-input-group">
-                                    <label for="enrollStartDate">Preferred Start Date</label>
-                                    <div class="input-with-icon">
-                                        <i class="fa-regular fa-calendar"></i>
-                                        <input type="date" id="enrollStartDate" required class="enhanced-control">
-                                    </div>
-                                </div>
-                                <div class="enhanced-input-group" style="margin-top: 0.5rem;">
-                                    <label>Daily Time Slot</label>
-                                    <div class="radio-group-grid" style="grid-template-columns: 1fr; gap: 0.75rem;">
-                                        <label class="radio-card custom-radio-label">
-                                            <input type="radio" name="enrollTimeSlot" value="morning" checked>
-                                            <div class="radio-card-content">
-                                                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                                    <i class="fa-solid fa-cloud-sun"></i><span>Morning (7 AM - 11 AM)</span>
-                                                </div>
-                                            </div>
-                                        </label>
-                                        <label class="radio-card custom-radio-label">
-                                            <input type="radio" name="enrollTimeSlot" value="afternoon">
-                                            <div class="radio-card-content">
-                                                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                                    <i class="fa-solid fa-sun"></i><span>Afternoon (12 PM - 4 PM)</span>
-                                                </div>
-                                            </div>
-                                        </label>
-                                        <label class="radio-card custom-radio-label">
-                                            <input type="radio" name="enrollTimeSlot" value="evening">
-                                            <div class="radio-card-content">
-                                                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                                    <i class="fa-solid fa-moon"></i><span>Evening (5 PM - 9 PM)</span>
-                                                </div>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section 3 -->
-                            <div class="form-section">
-                                <h3 class="form-section-title"><i class="fa-regular fa-address-card"></i> 3. Personal Details</h3>
-                                <div class="enhanced-input-group">
-                                    <label for="enrollName">Full Name</label>
-                                    <div class="input-with-icon">
-                                        <i class="fa-regular fa-user"></i>
-                                        <input type="text" id="enrollName" placeholder="Enter your full name" required class="enhanced-control">
-                                    </div>
-                                </div>
-                                <div class="enhanced-grid-2">
-                                    <div class="enhanced-input-group">
-                                        <label for="enrollPhone">Mobile Number</label>
-                                        <div class="input-with-icon">
-                                            <i class="fa-solid fa-phone"></i>
-                                            <input type="tel" id="enrollPhone" placeholder="10-digit mobile number" required class="enhanced-control">
-                                        </div>
-                                    </div>
-                                    <div class="enhanced-input-group">
-                                        <label for="enrollEmail">Email Address</label>
-                                        <div class="input-with-icon">
-                                            <i class="fa-regular fa-envelope"></i>
-                                            <input type="email" id="enrollEmail" placeholder="name@domain.com" class="enhanced-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="enhanced-input-group">
-                                    <label for="enrollAddress">Pick-up Address (Optional)</label>
-                                    <div class="input-with-icon align-top">
-                                        <i class="fa-solid fa-map-pin" style="margin-top: 14px;"></i>
-                                        <textarea id="enrollAddress" rows="3" placeholder="Include complete address details for doorstep pickup services" class="enhanced-control"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section 4: Order Summary -->
-                            <div class="form-section" style="background: var(--color-bg-light); padding: 1.5rem; border-radius: var(--border-radius-lg); border: 1px solid var(--color-border);">
-                                <h3 class="form-section-title"><i class="fa-solid fa-receipt"></i> 4. Order Summary</h3>
-                                <div class="invoice-summary" style="background: transparent; padding: 0; border: none; margin-top: 1rem;">
-                                    <div class="invoice-row">
-                                        <span class="invoice-label" id="enrollSummaryCourseName" style="font-weight: 600; color: var(--color-text-dark);">Selected Course</span>
-                                        <span class="invoice-value" id="enrollSummaryCoursePrice" style="font-weight: 700; color: var(--color-primary);">₹0.00</span>
-                                    </div>
-                                    <div class="invoice-row">
-                                        <span class="invoice-label">Branch</span>
-                                        <span class="invoice-value" id="enrollSummaryBranch">Dhankwadi</span>
-                                    </div>
-                                    <div class="invoice-row">
-                                        <span class="invoice-label">Schedule Start</span>
-                                        <span class="invoice-value" id="enrollSummarySchedule">--</span>
-                                    </div>
-                                    <div class="invoice-row">
-                                        <span class="invoice-label">Doorstep Pick-up</span>
-                                        <span class="invoice-value" id="enrollSummaryPickup">--</span>
-                                    </div>
-                                    <hr class="invoice-divider" style="margin: 1.25rem 0;">
-                                    <div class="invoice-row total" style="font-size: 1.25rem;">
-                                        <span class="invoice-label" style="font-weight: 800;">Total Fee</span>
-                                        <span class="invoice-value" id="enrollSummaryTotal" style="font-weight: 800; color: var(--color-primary);">₹0.00</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <hr class="form-divider" style="margin: 2.5rem 0;">
-
-                        <div style="display: flex; flex-direction: column; align-items: center; max-width: 500px; margin: 0 auto;">
-                            <div class="trust-indicators" style="margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--color-text-muted); display: flex; flex-direction: column; align-items: center; text-align: center;">
-                                <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center; margin-bottom: 0.25rem;">
-                                    <i class="fa-solid fa-lock" style="color: #10B981;"></i> <span>Your data is 100% secure</span>
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-                                    <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.1rem;"></i> <span>Reservation via WhatsApp</span>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; font-size: 1.15rem; padding: 1.15rem;">
-                                Confirm Slot <i class="fa-solid fa-check" style="margin-left: 0.5rem;"></i>
-                            </button>
                         </div>
                     </div>
+                    <div class="step-divider"></div>
+                    <div class="step-item">
+                        <div class="step-circle">2</div>
+                        <div class="step-content">
+                            <div class="step-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                            <div class="step-text">
+                                <strong>Schedule</strong>
+                                <span>Choose Date & Time</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-divider"></div>
+                    <div class="step-item">
+                        <div class="step-circle">3</div>
+                        <div class="step-content">
+                            <div class="step-icon"><i class="fa-regular fa-user"></i></div>
+                            <div class="step-text">
+                                <strong>Details</strong>
+                                <span>Your Information</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-divider"></div>
+                    <div class="step-item">
+                        <div class="step-circle">4</div>
+                        <div class="step-content">
+                            <div class="step-text" style="margin-left: 0;">
+                                <strong>Review</strong>
+                                <span>Confirm Booking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Layout Grid -->
+        <section class="enroll-main-section">
+            <div class="container">
+                <form id="enrollmentForm" class="enroll-layout-grid">
+                    
+                    <!-- Left Column (Form) -->
+                    <div class="enroll-form-col">
+                        
+                        <!-- Step 1: Course -->
+                        <div class="enroll-step-card">
+                            <h2 class="step-title"><span class="step-num">1</span> Choose Your Training</h2>
+                            
+                            <div class="course-tabs">
+                                <button type="button" class="course-tab active"><i class="fa-solid fa-car-side"></i> Car Training</button>
+                                <button type="button" class="course-tab"><i class="fa-solid fa-motorcycle"></i> Two-Wheeler</button>
+                                <button type="button" class="course-tab"><i class="fa-regular fa-id-card"></i> License Services</button>
+                                <button type="button" class="course-tab"><i class="fa-solid fa-star" style="color:var(--color-accent)"></i> Premium Programs</button>
+                            </div>
+
+                            <div class="course-cards-scroller-wrapper">
+                                <div class="course-cards-scroller">
+                                    <label class="course-select-card active">
+                                        <div class="most-popular-badge">MOST POPULAR <i class="fa-solid fa-star"></i></div>
+                                        <input type="radio" name="enrollCourse" value="beginner_car" checked>
+                                        <div class="csc-icon"><i class="fa-solid fa-car"></i></div>
+                                        <h3>Beginner Car Training</h3>
+                                        <div class="csc-price">₹3,500</div>
+                                        <ul class="csc-features">
+                                            <li><i class="fa-regular fa-circle-check"></i> 15 Training Days</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> Dual Control Car</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> RTO Assistance</li>
+                                        </ul>
+                                    </label>
+                                    
+                                    <label class="course-select-card">
+                                        <input type="radio" name="enrollCourse" value="advanced_car">
+                                        <div class="csc-icon"><i class="fa-solid fa-car-rear"></i></div>
+                                        <h3>Advanced Car Training</h3>
+                                        <div class="csc-price">₹4,500</div>
+                                        <ul class="csc-features">
+                                            <li><i class="fa-regular fa-circle-check"></i> Parking & Traffic</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> Experienced Drivers</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> Certificate Included</li>
+                                        </ul>
+                                    </label>
+
+                                    <label class="course-select-card">
+                                        <input type="radio" name="enrollCourse" value="own_car">
+                                        <div class="csc-icon"><i class="fa-solid fa-car-side"></i></div>
+                                        <h3>Own Vehicle Training</h3>
+                                        <div class="csc-price">₹2,500</div>
+                                        <ul class="csc-features">
+                                            <li><i class="fa-regular fa-circle-check"></i> Train in Your Car</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> Instructor Support</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> Flexible Schedule</li>
+                                        </ul>
+                                    </label>
+                                    
+                                    <label class="course-select-card">
+                                        <input type="radio" name="enrollCourse" value="rto_package">
+                                        <div class="csc-icon"><i class="fa-regular fa-file-lines"></i></div>
+                                        <h3>RTO Assistance Package</h3>
+                                        <div class="csc-price">₹1,500</div>
+                                        <ul class="csc-features">
+                                            <li><i class="fa-regular fa-circle-check"></i> Documentation</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> Form Filling Help</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> RTO Guidance</li>
+                                        </ul>
+                                    </label>
+
+                                    <label class="course-select-card">
+                                        <input type="radio" name="enrollCourse" value="premium_fast">
+                                        <div class="csc-icon"><i class="fa-solid fa-bolt"></i></div>
+                                        <h3>Premium Fast Track</h3>
+                                        <div class="csc-price">₹5,999</div>
+                                        <ul class="csc-features">
+                                            <li><i class="fa-regular fa-circle-check"></i> License in 15 Days</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> Priority Batches</li>
+                                            <li><i class="fa-regular fa-circle-check"></i> Full Support</li>
+                                        </ul>
+                                    </label>
+                                </div>
+                                <button class="scroller-btn next-btn" type="button"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Schedule -->
+                        <div class="enroll-step-card">
+                            <h2 class="step-title"><span class="step-num">2</span> Select Branch, Date & Time</h2>
+                            
+                            <div class="schedule-grid">
+                                <!-- Branch -->
+                                <div class="schedule-col">
+                                    <label class="input-label">Select Branch</label>
+                                    <div class="branch-search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <input type="text" placeholder="Search branch...">
+                                    </div>
+                                    <div class="branch-list">
+                                        <label class="branch-radio active">
+                                            <input type="radio" name="enrollBranch" value="dhankwadi" checked>
+                                            <div class="br-content">
+                                                <strong>Shri Bharat MDS (Dhankwadi)</strong>
+                                                <span class="br-badge">Most Popular</span>
+                                            </div>
+                                        </label>
+                                        <label class="branch-radio">
+                                            <input type="radio" name="enrollBranch" value="katraj">
+                                            <div class="br-content">
+                                                <strong>Katraj Branch</strong>
+                                            </div>
+                                        </label>
+                                        <label class="branch-radio">
+                                            <input type="radio" name="enrollBranch" value="dhayari">
+                                            <div class="br-content">
+                                                <strong>Dhayari Branch</strong>
+                                            </div>
+                                        </label>
+                                        <label class="branch-radio">
+                                            <input type="radio" name="enrollBranch" value="wanowrie">
+                                            <div class="br-content">
+                                                <strong>Wanowrie Branch</strong>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <a href="branches.html" class="view-all-branches">View all branches <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+
+                                <!-- Date -->
+                                <div class="schedule-col">
+                                    <label class="input-label">Select Start Date</label>
+                                    <div class="custom-calendar">
+                                        <div class="cal-header">
+                                            <button type="button"><i class="fa-solid fa-chevron-left"></i></button>
+                                            <strong>June 2026</strong>
+                                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                                        </div>
+                                        <div class="cal-days-header">
+                                            <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
+                                        </div>
+                                        <div class="cal-grid">
+                                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+                                            <span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span>
+                                            <span>15</span><span>16</span><span>17</span><span class="active">18</span><span>19</span><span>20</span><span>21</span>
+                                            <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
+                                            <span>29</span><span>30</span>
+                                        </div>
+                                        <div class="cal-footer">Available dates are highlighted</div>
+                                        <input type="hidden" id="enrollStartDate" value="2026-06-18">
+                                    </div>
+                                </div>
+
+                                <!-- Time & Pickup -->
+                                <div class="schedule-col">
+                                    <label class="input-label">Select Time Slot</label>
+                                    <div class="timeslot-list">
+                                        <label class="timeslot-radio active">
+                                            <input type="radio" name="enrollTime" value="morning" checked>
+                                            <div class="ts-icon"><i class="fa-regular fa-sun" style="color:#F59E0B;"></i></div>
+                                            <div class="ts-content">
+                                                <strong>Morning</strong>
+                                                <span>7 AM - 11 AM</span>
+                                            </div>
+                                        </label>
+                                        <label class="timeslot-radio">
+                                            <input type="radio" name="enrollTime" value="afternoon">
+                                            <div class="ts-icon"><i class="fa-regular fa-sun"></i></div>
+                                            <div class="ts-content">
+                                                <strong>Afternoon</strong>
+                                                <span>12 PM - 4 PM</span>
+                                            </div>
+                                        </label>
+                                        <label class="timeslot-radio">
+                                            <input type="radio" name="enrollTime" value="evening">
+                                            <div class="ts-icon"><i class="fa-regular fa-moon"></i></div>
+                                            <div class="ts-content">
+                                                <strong>Evening</strong>
+                                                <span>5 PM - 9 PM</span>
+                                            </div>
+                                        </label>
+                                        <label class="timeslot-radio">
+                                            <input type="radio" name="enrollTime" value="weekend">
+                                            <div class="ts-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                                            <div class="ts-content">
+                                                <strong>Weekend Batch</strong>
+                                                <span>Special Weekend Classes</span>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pickup Details -->
+                            <div class="pickup-grid">
+                                <div class="pickup-col">
+                                    <label class="input-label">Pickup Required?</label>
+                                    <div class="pickup-radios">
+                                        <label class="pu-radio active"><input type="radio" name="pickupReq" value="yes" checked> Yes, I need pickup</label>
+                                        <label class="pu-radio"><input type="radio" name="pickupReq" value="no"> No, I will come to branch</label>
+                                    </div>
+                                </div>
+                                <div class="pickup-col">
+                                    <label class="input-label">Pickup Address</label>
+                                    <div class="input-with-icon align-top">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <textarea rows="2" placeholder="Enter your complete address for pickup" class="pu-textarea">Katraj, Dhankwadi, Dhayari, Pune</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Details -->
+                        <div class="enroll-step-card">
+                            <h2 class="step-title"><span class="step-num">3</span> Your Details</h2>
+                            
+                            <div class="details-grid">
+                                <div class="detail-group">
+                                    <label class="input-label">Full Name <span class="req">*</span></label>
+                                    <input type="text" placeholder="Enter your full name" required class="detail-input">
+                                </div>
+                                <div class="detail-group">
+                                    <label class="input-label">Do you have Learner's License?</label>
+                                    <div class="ll-radios">
+                                        <label class="ll-radio active"><input type="radio" name="hasLL" value="yes" checked> Yes, I have LL</label>
+                                        <label class="ll-radio"><input type="radio" name="hasLL" value="no"> No, I don't have LL</label>
+                                    </div>
+                                </div>
+                                <div class="detail-group">
+                                    <label class="input-label">Mobile Number <span class="req">*</span></label>
+                                    <div class="phone-input">
+                                        <div class="phone-prefix"><i class="fa-solid fa-phone"></i> +91 <i class="fa-solid fa-caret-down"></i></div>
+                                        <input type="tel" placeholder="Enter 10-digit mobile number" required>
+                                    </div>
+                                </div>
+                                <div class="detail-group">
+                                    <label class="input-label">Learner's License Number</label>
+                                    <input type="text" placeholder="Enter LL number (if available)" class="detail-input">
+                                </div>
+                                <div class="detail-group">
+                                    <label class="input-label">WhatsApp Number (Optional)</label>
+                                    <div class="phone-input">
+                                        <div class="phone-prefix"><i class="fa-brands fa-whatsapp"></i> +91 <i class="fa-solid fa-caret-down"></i></div>
+                                        <input type="tel" placeholder="Enter WhatsApp number">
+                                    </div>
+                                </div>
+                                <div class="detail-group" style="grid-row: span 2;">
+                                    <label class="input-label">Special Requirements (Optional)</label>
+                                    <textarea rows="4" placeholder="Any special requirements or preferences?&#10;&#10;E.g. Female instructor, Weekend classes, etc." class="detail-input"></textarea>
+                                </div>
+                                <div class="detail-group">
+                                    <label class="input-label">Email Address (Optional)</label>
+                                    <input type="email" placeholder="Enter email address" class="detail-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Area -->
+                        <div class="submit-area">
+                            <button type="submit" class="enroll-cta-btn">
+                                <i class="fa-solid fa-steering-wheel"></i> Reserve My Seat Now <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <div class="submit-note">
+                                <i class="fa-brands fa-whatsapp" style="color:#25D366"></i> Our expert will contact you on WhatsApp within 15 minutes.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column (Sidebar) -->
+                    <div class="enroll-sidebar-col">
+                        <div class="booking-summary-card">
+                            <div class="summary-header">
+                                <i class="fa-solid fa-receipt"></i> Your Booking Summary
+                            </div>
+                            
+                            <div class="summary-details">
+                                <div class="s-row">
+                                    <span class="s-label">Course</span>
+                                    <span class="s-val" id="sumCourse">Beginner Car Training</span>
+                                </div>
+                                <div class="s-row">
+                                    <span class="s-label">Branch</span>
+                                    <span class="s-val text-right" id="sumBranch">Shri Bharat MDS<br>(Dhankwadi)</span>
+                                </div>
+                                <div class="s-row">
+                                    <span class="s-label">Start Date</span>
+                                    <span class="s-val text-right" id="sumDate">18 June 2026<br>(Thursday)</span>
+                                </div>
+                                <div class="s-row">
+                                    <span class="s-label">Time Slot</span>
+                                    <span class="s-val text-right" id="sumTime">Morning<br>(7 AM – 11 AM)</span>
+                                </div>
+                                <div class="s-row">
+                                    <span class="s-label">Pickup</span>
+                                    <span class="s-val" id="sumPickup">Yes</span>
+                                </div>
+                                <div class="s-row pu-address">
+                                    <span class="s-label">Pickup Address</span>
+                                    <span class="s-val text-right" id="sumAddr">Katraj, Dhankwadi,<br>Dhayari, Pune</span>
+                                </div>
+                            </div>
+
+                            <div class="summary-total">
+                                <span class="total-label">Total Fee</span>
+                                <span class="total-val" id="sumTotal">₹3,500</span>
+                            </div>
+                            <div class="no-hidden-charges">
+                                <i class="fa-regular fa-circle-check"></i> No Hidden Charges
+                            </div>
+
+                            <div class="summary-included">
+                                <h4>What's Included?</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-check"></i> RTO Guidance & Support</li>
+                                    <li><i class="fa-solid fa-check"></i> Dual-Control Training</li>
+                                    <li><i class="fa-solid fa-check"></i> Completion Certificate</li>
+                                    <li><i class="fa-solid fa-check"></i> Flexible Reschedule</li>
+                                    <li><i class="fa-solid fa-check"></i> Doorstep Pickup</li>
+                                </ul>
+                            </div>
+
+                            <div class="summary-why">
+                                <h4>Why Choose Bharat Driving School?</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-user-check"></i> 2,450+ Happy Students</li>
+                                    <li><i class="fa-solid fa-star" style="color:var(--color-accent)"></i> 4.9 Star Google Rating</li>
+                                    <li><i class="fa-solid fa-award"></i> 13+ Years of Excellence</li>
+                                    <li><i class="fa-solid fa-percent"></i> 100% License Success Rate</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="data-secure-note">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>Your data is 100% secure<br>We never share your information with anyone.</p>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
