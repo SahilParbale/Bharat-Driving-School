@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav();
     initHeaderScroll();
 
+    let router: Router;
+
     // 4. Dynamic Bootloader for page-specific components
     const bootPage = (path: string) => {
         // Re-initialize reveals (IntersectionObserver)
@@ -30,13 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (path.includes('courses.html')) {
             // Courses Catalog Page
             initCoursesSection((courseId) => {
-                window.location.href = `enroll.html?course=${courseId}`;
+                router.navigate(`enroll.html?course=${courseId}`);
             });
         } else if (path.includes('calculator.html')) {
             // Calculator Page
             initFeeCalculator((customDetails) => {
                 localStorage.setItem('bmds_custom_enroll', JSON.stringify(customDetails));
-                window.location.href = 'enroll.html';
+                router.navigate('enroll.html');
             });
         } else if (path.includes('branches.html')) {
             // Branches Page
@@ -77,21 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (bookBasic) {
                 bookBasic.addEventListener('click', (e) => {
                     e.preventDefault();
-                    window.location.href = 'enroll.html?course=car-basic';
+                    router.navigate('enroll.html?course=car-basic');
                 });
             }
             const bookSedan = document.getElementById('book-car-sedan');
             if (bookSedan) {
                 bookSedan.addEventListener('click', (e) => {
                     e.preventDefault();
-                    window.location.href = 'enroll.html?course=car-sedan';
+                    router.navigate('enroll.html?course=car-sedan');
                 });
             }
             const bookBike = document.getElementById('book-two-wheeler');
             if (bookBike) {
                 bookBike.addEventListener('click', (e) => {
                     e.preventDefault();
-                    window.location.href = 'enroll.html?course=two-wheeler';
+                    router.navigate('enroll.html?course=two-wheeler');
                 });
             }
 
@@ -146,7 +148,7 @@ _Sent from Driving School Web Platform._`;
     };
 
     // 5. Initialize the client-side Router
-    new Router((path) => {
+    router = new Router((path) => {
         bootPage(path);
     });
 
