@@ -11,9 +11,13 @@ import { initCoursesSection } from './components/courses';
 import { initFeeCalculator } from './components/feeCalculator';
 import { initBranchesSection } from './components/branches';
 import { initEnrollPage } from './components/enroll';
+import { initChatWidget } from './components/chatWidget';
 import { Router } from './utils/router';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize interactive floating chat widget
+    initChatWidget();
+
     // 2. Initialize layout / design animations & scroll effects
     initMobileNav();
     initHeaderScroll();
